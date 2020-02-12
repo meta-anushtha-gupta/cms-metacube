@@ -3,7 +3,7 @@
      data-sly-use.html="${ '/apps/metacube/components/utils/templates/html.html' }"/>
 
 <section data-sly-test.hasContent="${ properties.heroImageAlt}" class="hero-image">
-	<div class="hero-image__container wrapper">
+	<div class="hero-image__container">
        <sly data-sly-test.isWarrantyCategory="${(pageProperties.jcr:title == 'Policy' || pageProperties.jcr:title == 'Requirements' || pageProperties.jcr:title == 'Procedures' || pageProperties.jcr:title == 'Guidelines') && pageProperties.sling:resourceType == '/apps/metacube/pages/page-warranty-iparsys-1-1-0'}" />
        <sly data-sly-test="${isWarrantyCategory}">
          <h2 class="hero-image__title">${pageProperties.heading ? pageProperties.heading : currentPage.parent.title}</h2>
