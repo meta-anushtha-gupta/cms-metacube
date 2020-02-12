@@ -1,0 +1,144 @@
+.link-list {
+    margin-bottom: $space-4;
+
+    &__heading {
+        color: $scorpion;
+        font-size: 24px;
+        font-family: $secondary-font-family;
+    }
+
+    &__content-description {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    &__container {
+        display: block;
+    }
+
+    &__item {
+        border-top: 1px solid $alto;
+
+        &:last-child {
+            border-bottom: 1px solid $alto;
+        }
+
+        &-link {
+            color: $emperor;
+            display: block;
+            padding: $space-2 $space-5;
+            font-size: 14px;
+            position: relative;
+
+            &:hover {
+                background-color: $boston-blue;
+                color: $white;
+            }
+
+            &-description {
+                font-size: 12px;
+            }
+        }
+
+        &-text {
+            display: block;
+            padding: 0 $space;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 13px;
+        left: 10px;
+    }
+
+    &__icon-list {
+        color: $boston-blue;
+    }
+
+    &__icon-nav {
+        left: auto;
+        right: $space;
+    }
+
+    &__main-icon {
+        border: 1px solid $alto;
+        border-radius: 3px;
+        padding: $space;
+    }
+
+    &__noSeparator {
+        .link-list {
+            &__item {
+                border-top: none;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    &__loader {
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+        text-align: center;
+
+        &:after {
+            content: " ";
+            display: block;
+            text-align: center;
+            width: $space-5;
+            height: $space-5;
+            margin: 1px;
+            border-radius: 50%;
+            border: 3px solid $denim;
+            border-color: $denim transparent $denim transparent;
+            animation: dual-ring 1.2s linear infinite;
+        }
+    }
+
+    @keyframes dual-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+}
+
+.link-list-accordion {
+    border-bottom: 1px solid $alto;
+
+    &__title {
+        font-size: 24px;
+        font-family: $secondary-font-family;
+        font-weight: $font-weight-regular;
+        color: $scorpion;
+        padding-top: $space $space-3 0px $space-3;
+
+        &:hover {
+            color: $deep-blue-sky;
+            cursor: pointer;
+        }
+    }
+
+    .link-list {
+        &__item {
+            &:first-child {
+                border-top: none;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.author-validation {
+    &__container {
+        display: inline-block;
+        margin: $space-2 0;
+        @include media($xlarge) {
+            margin: $space-2 0;
+        }
+        padding: $space-4 $space-3 $space-4 $space * 15;
+        position: relative;
+        width: 100%;
+    }
+
+    &__message {
+        @include copy-wide-bold;
+    }
+
+    &__hint {
+        @include copy-wide-reg;
+    }
+
+    &__notice {
+        border: 1px solid $black;
+        color: $blitz;
+
+        &:before {
+            @include icon($icon-warning);
+            @include center-content(vertical);
+            color: $denim;
+            font-size: 25px;
+            left: $space-5;
+            position: absolute;
+        }
+    }
+
+    &--error {
+        border: 1px solid $guardsman-red;
+        color: $guardsman-red;
+
+        &:before {
+            color: $guardsman-red;
+        }
+    }
+}

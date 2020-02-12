@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Panel"
+    title="Options">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <textBlock
+            jcr:primaryType="cq:Widget"
+            defaultValue="left"
+            fieldLabel="Text Block Alignment"
+            name="./textBlock"
+            type="select"
+            xtype="selection">
+            <options jcr:primaryType="cq:WidgetCollection">
+                <left
+                    jcr:primaryType="nt:unstructured"
+                    text="Left"
+                    value="left"/>
+                <right
+                    jcr:primaryType="nt:unstructured"
+                    text="Right"
+                    value="right"/>
+            </options>
+        </textBlock>
+        <textColor
+            jcr:primaryType="cq:Widget"
+            defaultValue="dark"
+            fieldLabel="Text Color"
+            name="./textColor"
+            type="select"
+            xtype="selection">
+            <options jcr:primaryType="cq:WidgetCollection">
+                <light
+                    jcr:primaryType="nt:unstructured"
+                    text="Light"
+                    value="light"/>
+                <dark
+                    jcr:primaryType="nt:unstructured"
+                    text="Dark"
+                    value="dark"/>
+            </options>
+        </textColor>
+    </items>
+</jcr:root>

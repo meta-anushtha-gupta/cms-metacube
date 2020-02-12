@@ -1,0 +1,139 @@
+.pop-up {
+    display: none;
+    font-size: 14px;
+    position: fixed;
+    padding-top: $space-20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 9;
+
+    &--open {
+        display: block;
+    }
+
+    &__content {
+        position: relative;
+        background-color: $white;
+        margin: auto;
+        padding: 0;
+        border-radius: 6px;
+        width: 60%;
+        box-shadow: 0 $space $space-3 rgba(0,0,0,.5);
+
+        &-header {
+            padding: $space $space-4;
+            font-size: 24px;
+            font-family: $secondary-font-family;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            background-color: $astral;
+            color: $white;
+        }
+
+        &-close {
+            &-icon {
+                color: $white;
+                font-size: $space-2;
+                font-weight: bold;
+                font-family: "micro-icons";
+                position: absolute;
+                right: $space-4;
+                top: 17px;
+
+                @include media($tablet) {
+                    top: $space-3;
+                }
+
+                &:before {
+                    content: '\e91e';
+                }
+
+                &:hover,&:focus {
+                    text-decoration: none;
+                    cursor: pointer;
+                    color: $dusty-gray;
+                }
+            }
+
+            &-button {
+                font-size: 14px;
+                white-space: nowrap;
+                color: $mine-shaft;
+                background-color: $white;
+                border-style: none;
+                border: 1px solid $very-light-grey;
+                border-radius: 4px;
+                padding: $space $space-2;
+                cursor: pointer;
+
+                &:focus {
+                    border-color: $silver-chalice;
+                    outline: 0;
+                }
+            }
+        }
+
+        &-body {
+            padding: $space-2;
+
+            @include media($tablet) {
+                padding: $space-4;
+            }
+
+            img {
+                border: 1px solid $dove-gray;
+                padding: 2px;
+                width: 100%;
+            }
+
+            .video {
+                position: relative;
+                width: 100%;
+
+                &__img {
+                    width: 100%;
+                }
+
+                &__img {
+                    opacity: 0;
+                }
+
+                &__frame {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+
+        &-footer {
+            border-top: 1px solid $mercury;
+            margin-top: $space-2;
+            padding: $space-2;
+
+            @include media($tablet) {
+                margin-top: $space-3;
+                padding: $space-4;
+            }
+            text-align: right;
+        }
+    }
+}
+
+.carousel {
+    .pop-up__content {
+        &-header {
+            background-color: $white;
+        }
+
+        &-close-icon {
+            color: $black;
+        }
+    }
+}

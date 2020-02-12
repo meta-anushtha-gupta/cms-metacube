@@ -1,0 +1,102 @@
+.pagination {
+    font-size: 14px;
+
+    &__index {
+        display: inline-block;
+        margin: $space-4 0 $space-2 0;
+
+        &--anchor {
+            color: $boston-blue;
+            float: left;
+            padding: $space;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid $alto;
+            width: 40px;
+            text-align: center;
+            margin-bottom: $space-2;
+
+            &:hover {
+                color: $st-tropaz;
+                background-color: $gallery;
+                border-color: $alto;
+                cursor: pointer;
+            }
+
+            &:first-child {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        }
+
+        &--anchor-hidden {
+            display: none;
+        }
+
+        &--active {
+            color: $white;
+            background-color: $boston-blue;
+            border-color: $boston-blue;
+
+            &:hover {
+                color: $white;
+                background-color: $boston-blue;
+                border-color: $boston-blue;
+            }
+        }
+
+        &--disabled {
+            pointer-events: none;
+            color: grey;
+            cursor: default;
+
+            &:hover, &:focus {
+                color: grey;
+                cursor: default;
+                border-color: none;
+                background-color: $white;
+            }
+        }
+    }
+
+    &__content {
+        display: block;
+
+        &--anchor {
+            color: $emperor;
+
+            &:hover {
+                color: white;
+
+                .pagination__content-container {
+                    background-color: $boston-blue;
+                }
+            }
+        }
+
+        &__title {
+            font-size: 18px;
+            font-weight: $font-weight-semibold;
+            font-family: $secondary-font-name;
+        }
+
+        &--hidden {
+            display: none;
+        }
+
+        &--not-found {
+            font-size: 18px;
+            font-weight: $font-weight-bold;
+        }
+    }
+
+    &__content-container {
+        padding: $space-2;
+        border: 1px solid $alto;
+    }
+}

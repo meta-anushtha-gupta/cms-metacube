@@ -1,0 +1,171 @@
+.dealer-module {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+
+    @include media($tablet) {
+        display: flex;
+        align-items: center;
+        position: inherit;
+        flex-direction: row;
+    }
+
+    &__media-container {
+        width: 100%;
+
+        @include media($tablet) {
+            top: 100%;
+            @include span-columns(7);
+            position: relative;
+        }
+    }
+
+    &__title {
+        @include featured-heading;
+        margin-top: $space-3;
+
+        @include media($tablet) {
+            margin-top: 0;
+        }
+    }
+
+    &__sub-title {
+        @include copy-wide-reg;
+        margin-top: $space-3;
+        margin-bottom: $space-3;
+
+        @include media($tablet) {
+            margin-top: $space-4;
+            margin-bottom: $space-4;
+        }
+    }
+
+    &__copy-container {
+        position: relative;
+
+        @include media($tablet) {
+            @include span-columns(5);
+        }
+    }
+
+    &__copy-first {
+        flex-direction: column-reverse;
+
+        @include media($tablet) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__image {
+        width: 100%;
+
+        @include media($tablet) {
+            height: auto;
+        }
+    }
+
+    &__search {
+        @include media($tablet) {
+            top: 25%;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            width: 100%;
+
+        }
+    }
+
+    &__search-container {
+        text-align: left;
+        width: 80%;
+        vertical-align: top;
+        margin-left: 10%;
+
+        @include media($tablet) {
+            width: 100%;
+            margin-top: 0;
+            text-align: right;
+            min-height: $space-15;
+            margin-right: 10%;
+        }
+    }
+
+    &__search-content {
+        .dealer-module {
+            &__search {
+                display: none;
+            }
+
+            &__search-copy {
+                display: block;
+            }
+        }
+    }
+
+    &__search-copy {
+        position: static;
+        display: none;
+
+        .dealer-module {
+            &__search-container {
+                margin: 0;
+                padding: 0;
+            }
+
+            &__form-container {
+                text-align: left;
+            }
+        }
+    }
+
+    &__form-label {
+        @include copy-narrow-bold;
+        color: $mine-shaft;
+        display: block;
+        margin-bottom: $space - 1;
+    }
+
+    &__form-input {
+        width: 100%;
+
+        /* float: left; */
+        padding: 8px $space-2;
+        border: 1px solid $silver;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        margin-bottom: $space-2;
+
+        @include media($tablet) {
+            width: auto;
+            margin-right: $space-2;
+            margin-bottom: 0;
+        }
+
+        &__container {
+            display: block;
+
+            @include media($tablet) {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__form-button {
+        padding: $space $space-8;
+        border-radius: 0px;
+        vertical-align: top;
+    }
+
+    .error-field {
+        &--hidden {
+            display: none;
+        }
+
+        &--zip-code {
+            font-size: 14px;
+            text-align: left;
+            color: $guardsman-red;
+        }
+    }
+}

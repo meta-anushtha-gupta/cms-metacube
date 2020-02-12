@@ -1,0 +1,42 @@
+.hero-image {
+    background: $black;
+
+    &__container {
+        position: relative;
+        min-height: 120px;
+        overflow: hidden;
+
+        @include media($tablet) {
+            min-height: auto;
+        }
+    }
+
+    &__title {
+        color: $white;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        @include subhead-reg;
+        z-index: 1;
+        margin-left: $space-3;
+
+        @include media($tablet) {
+            font-weight: 500;
+            max-width: 55%;
+            margin-left: $space-10;
+        }
+    }
+
+    &__image {
+        height: 100%;
+        position: absolute;
+        right: -110px;
+
+        @include media($tablet) {
+            width: 100%;
+            height: auto;
+            position: inherit;
+            right: auto;
+        }
+    }
+}

@@ -1,0 +1,61 @@
+.title {
+    color: $scorpion;
+
+    &__content {
+        @include subsection-reg;
+        font-size: 24px;
+    }
+
+    &__container {
+        text-align: center;
+    }
+
+    &__spacing {
+        &--top {
+            padding-top: $space-4;
+        }
+
+        &--bottom {
+            padding-bottom: $space-4;
+        }
+
+        &--both {
+            padding: $space-4 0px;
+        }
+
+        &--none {
+            padding: 0;
+        }
+    }
+
+    &--add-bottom-border {
+        padding-bottom: $space-4;
+        border-bottom: 1px solid $silver;
+    }
+
+    &__alignment {
+        &--left {
+            text-align: left;
+        }
+
+        &--right {
+            text-align: right;
+        }
+
+        &--center {
+            text-align: center;
+        }
+    }
+
+    &__separator {
+        &--top {
+            border-top: 1px solid $silver;
+            padding-top: $space-4;
+        }
+
+        &--bottom {
+            border-bottom: 1px solid $silver;
+            padding-bottom: $space-4;
+        }
+    }
+}

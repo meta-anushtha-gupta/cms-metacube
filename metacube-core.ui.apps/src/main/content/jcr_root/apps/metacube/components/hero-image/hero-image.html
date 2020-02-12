@@ -1,0 +1,20 @@
+<sly data-sly-use.imageFull="${ '/apps/metacube/components/utils/image.js' @ imagePath='heroImage' }"
+     data-sly-use.imageSmall="${ '/apps/metacube/components/utils/image.js' @ imagePath='heroImageSmall' }"
+     data-sly-use.html="${ '/apps/metacube/components/utils/templates/html.html' }"/>
+
+<section data-sly-test.hasContent="${ properties.heroImageAlt}" class="hero-image">
+	<div class="hero-image__container wrapper">
+       <sly data-sly-test.isWarrantyCategory="${(pageProperties.jcr:title == 'Policy' || pageProperties.jcr:title == 'Requirements' || pageProperties.jcr:title == 'Procedures' || pageProperties.jcr:title == 'Guidelines') && pageProperties.sling:resourceType == '/apps/metacube/pages/page-warranty-iparsys-1-1-0'}" />
+       <sly data-sly-test="${isWarrantyCategory}">
+         <h2 class="hero-image__title">${pageProperties.heading ? pageProperties.heading : currentPage.parent.title}</h2>
+       </sly>
+       <sly data-sly-test="${!isWarrantyCategory}">
+         <h2 class="hero-image__title">${pageProperties.heading ? pageProperties.heading : pageProperties.jcr:title}</h2>
+       </sly>
+		<sly data-sly-call="${html.picture @ src1=imageFull.path, src2=imageSmall.path, mediaQuery='max-width: 767px',
+                altText=properties.heroImageAlt, cssClass='hero-image__image' }" />
+
+	</div>
+</section>
+
+ <sly data-sly-test="${wcmmode.edit && !hasContent}" data-sly-include="placeholder.html" />

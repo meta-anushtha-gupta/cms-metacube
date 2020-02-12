@@ -1,0 +1,49 @@
+.loading-spinner {
+    display: block;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    margin: 0 auto;
+    vertical-align: middle;
+    border-radius: 50%;
+    background: transparent;
+    animation: spinner $speed-8 infinite linear;
+    transform: translateZ(0);
+
+    &:before {
+        position: absolute;
+        content: '';
+        width: 50%;
+        height: 50%;
+        top: 0;
+        left: 0;
+        background: $silver-chalice;
+        background-repeat: no-repeat;
+        border-radius: 100% 0 0 0;
+    }
+
+    &:after {
+        position: absolute;
+        content: '';
+        width: 80%;
+        height: 80%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: $white;
+        border-radius: 50%;
+        margin: auto;
+    }
+
+    @keyframes spinner {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}

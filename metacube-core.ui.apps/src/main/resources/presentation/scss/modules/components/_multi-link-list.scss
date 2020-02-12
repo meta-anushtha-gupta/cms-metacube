@@ -1,0 +1,24 @@
+.multi-link-list {
+    .link-list {
+        margin-bottom: 0px;
+
+        &__item {
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+    &--reverse {
+        .link-list {
+            &__container {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            &__item {
+                flex: 0 0 auto;
+            }
+        }
+    }
+}

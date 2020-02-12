@@ -1,0 +1,6 @@
+export default {
+    DELAY_500MS: 500,
+    DELAY_750MS: 750,
+    DELAY_1000MS: 1000,
+    DELAY_1500MS: 1500
+};

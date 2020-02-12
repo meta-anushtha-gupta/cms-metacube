@@ -1,0 +1,28 @@
+.list {
+    .text-desc {
+        margin-bottom: $space-4;
+
+        &__title {
+            @include subhead-reg;
+            font-size: 24px;
+            font-family: $secondary-font-family;
+            font-weight: 500;
+            margin-bottom: $space-4;
+        }
+
+        &__subtitle {
+            @include featured-copy-bold;
+            margin-bottom: $space-2;
+        }
+
+        &__panel {
+            &-content {
+                margin-bottom: $space-2;
+            }
+        }
+
+        &__link {
+            font-size: 14px;
+        }
+    }
+}

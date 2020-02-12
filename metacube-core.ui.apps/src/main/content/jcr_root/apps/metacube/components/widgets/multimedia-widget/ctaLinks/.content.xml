@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/foundation/form/multifield"
+    class="foundation-layout-util-maximized-alt long-label"
+    fieldLabel="Links">
+    <field
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/form/fieldset"
+        acs-commons-nested="JSON_STORE"
+        name="./colLinks">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+            method="absolute"/>
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <linkText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        class="foundation-layout-util-maximized-alt long-label"
+                        fieldDescription="Limit to 30 characters, including spaces"
+                        fieldLabel="Link Text"
+                        name="./linkText"
+                        required="{Boolean}true"/>
+                    <linkTarget
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldDescription="Select link destination"
+                        fieldLabel="Link Destination"
+                        name="./linkTarget"
+                        required="{Boolean}true"
+                        rootPath="/content"/>
+                </items>
+            </column>
+        </items>
+    </field>
+</jcr:root>

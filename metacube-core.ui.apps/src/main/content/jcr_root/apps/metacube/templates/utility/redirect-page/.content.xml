@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="Page used as a node placeholder to redirect to another page."
+    jcr:primaryType="cq:Template"
+    jcr:title="CMS Redirect Page"
+    allowedPaths="[/content(/.*)?]"
+    hideInNav="{Boolean}true"
+    ranking="{Long}900">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="metacube/pages/admin/base">
+        <redirect
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="metacube/components/admin/redirect"/>
+    </jcr:content>
+</jcr:root>

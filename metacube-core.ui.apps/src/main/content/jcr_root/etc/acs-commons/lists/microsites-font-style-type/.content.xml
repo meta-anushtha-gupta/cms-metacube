@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/acs-commons"
+        cq:lastModified="{Date}2017-10-02T22:57:35.686-04:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/acs-commons/templates/utilities/genericlist"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Font Style Types"
+        sling:resourceType="acs-commons/components/utilities/genericlist">
+        <list
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <type_1
+                jcr:created="{Date}2017-10-02T22:56:25.124-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-02T22:56:41.501-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Please Select"
+                sling:resourceType="acs-commons/components/utilities/genericlist/item"
+                value=""/>
+            <type_2
+                jcr:created="{Date}2017-10-02T22:56:25.124-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-02T22:56:41.501-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Helvetica"
+                sling:resourceType="acs-commons/components/utilities/genericlist/item"
+                value="Helvetica"/>
+            <type_3
+                jcr:created="{Date}2017-10-02T22:54:19.690-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-02T22:56:19.380-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Arial"
+                sling:resourceType="acs-commons/components/utilities/genericlist/item"
+                value="Arial"/>
+            <type_4
+                jcr:created="{Date}2017-10-02T22:56:45.513-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-02T22:56:56.421-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Sans Serif"
+                sling:resourceType="acs-commons/components/utilities/genericlist/item"
+                value="sans-serif"/>
+            <type_5
+                jcr:created="{Date}2017-10-02T22:56:45.513-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-02T22:56:56.421-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Georgia"
+                sling:resourceType="acs-commons/components/utilities/genericlist/item"
+                value="Georgia"/>
+            <type_6
+                jcr:created="{Date}2017-10-02T22:56:45.513-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-02T22:56:56.421-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Courier"
+                sling:resourceType="acs-commons/components/utilities/genericlist/item"
+                value="Courier"/>
+            <type_7
+                jcr:created="{Date}2017-10-02T22:56:25.124-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-02T22:56:41.501-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Times New Roman"
+                sling:resourceType="acs-commons/components/utilities/genericlist/item"
+                value="Times New Roman"/>
+        </list>
+    </jcr:content>
+</jcr:root>

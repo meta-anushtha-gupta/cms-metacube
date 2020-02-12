@@ -1,0 +1,194 @@
+<!--*/
+Description:
+General template to add a link
+
+Parameters:
+linkTarget - [optional] Sets the target of the link. Include if you want to overwrite link.external
+
+Usage:
+<sly data-sly-use.html="${ '/apps/metacube/components/utils/templates/html.html' }" />
+<sly data-sly-call="${html.a @ href='#', text='some text', dataAnalyticsTrigger='[specified value]' }" />
+*/-->
+
+<template
+        data-sly-template.a="${@ href, text, class1='optional', class2='optional', class3='optional', dataAnalyticsTrigger='optional', linkTarget='optional'}"
+    data-sly-use.link="${ 'com.metacube.cms.core.wcmusepojo.Link' @ path=href}">
+
+    <sly data-sly-use.strContains="${ '/apps/metacube/components/utils/string/StringContains.js' @ str = link.href, strFragment = '#!MP' }" />
+    <sly data-sly-use.helper="/apps/metacube/utility/aem-helper.js" />
+    <sly data-sly-test.siteName="${helper.siteName @context = 'text'}"/>
+    <sly data-sly-use.strContains="${ '/apps/metacube/components/utils/string/StringContains.js' @ str = link.href, strFragment = '#!MP' }" />
+   <sly data-sly-test.disableLinkCheck="${strContains.match && (siteName=='marketing-portal' || siteName=='enterprise-apps')}">
+            <a href="${link.href @context='unsafe'}" x-cq-linkchecker="skip" class="${class1} ${class2} ${class3}"
+       target="${link.external && !linkTarget ? '_blank' : linkTarget || ''}" rel="${link.external || linkTarget ? 'noopener' : ''}"
+       data-analytics-trigger="${dataAnalyticsTrigger}">${text @ context='html'}</a>
+    </sly>
+    <sly data-sly-test="${!disableLinkCheck}">
+            <a href="${link.href}" class="${class1} ${class2} ${class3}"
+       target="${link.external && !linkTarget ? '_blank' : linkTarget || ''}" rel="${link.external || linkTarget ? 'noopener' : ''}"
+       data-analytics-trigger="${dataAnalyticsTrigger}">${text @ context='html'}</a>
+        </sly>
+</template>
+
+<!--*/
+Parameters:
+linkTarget - [optional] Sets the target of the link. Include if you want to overwrite link.external
+
+Usage:
+<sly data-sly-use.html="${ '/apps/metacube/components/utils/templates/html.html' }" />
+
+<sly data-sly-call="${html.ai18n @ href='#', text='some text', dataAnalyticsTrigger='[specified value]' }" />
+*/-->
+
+<template data-sly-template.ai18n="${@ href, text, class1='optional', class2='optional', dataAnalyticsTrigger='optional', linkTarget='optional'}" data-sly-use.link="${ 'com.metacube.cms.core.wcmusepojo.Link' @ path=href}">
+
+        <sly data-sly-use.strContains="${ '/apps/metacube/components/utils/string/StringContains.js' @ str = link.href, strFragment = '#!MP' }" />
+        <sly data-sly-use.helper="/apps/metacube/utility/aem-helper.js" />
+        <sly data-sly-test.siteName="${helper.siteName @context = 'text'}"/>
+        <sly data-sly-use.strContains="${ '/apps/metacube/components/utils/string/StringContains.js' @ str = link.href, strFragment = '#!MP' }" />
+       <sly data-sly-test.disableLinkCheck="${strContains.match && (siteName=='marketing-portal' || siteName=='enterprise-apps')}">
+                <a href="${link.href @context='unsafe'}" x-cq-linkchecker="skip" class="${class1} ${class2} ${class3}"
+           target="${link.external && !linkTarget ? '_blank' : linkTarget || ''}" rel="${link.external || linkTarget ? 'noopener' : ''}"
+           data-analytics-trigger="${dataAnalyticsTrigger}" download="${link.asset}">${text @ i18n}</a>
+        </sly>
+        <sly data-sly-test="${!disableLinkCheck}">
+                <a href="${link.href}" class="${class1} ${class2} ${class3}"
+           target="${link.external && !linkTarget ? '_blank' : linkTarget || ''}" rel="${link.external || linkTarget ? 'noopener' : ''}"
+           data-analytics-trigger="${dataAnalyticsTrigger}" download="${link.asset}">${text @ i18n}</a>
+        </sly>
+</template>
+
+<!--*/
+Usage:
+<sly data-sly-use.html="${ '/apps/metacube/components/utils/templates/html.html' }" />
+<sly data-sly-call="${html.iconAnchor @ href='#', text='some text', dataAnalyticsTrigger='[specified value]' }" />
+*/-->
+<template
+       data-sly-template.iconAnchor="${@ href, text, listIcon, navIcon, linkDescription='optional', linkDescriptionClass='optional', noRightIcon='optional', class1='optional', class2='optional', iconClass1='optional', iconClass2='optional', contentClass1='optional', contentClass2='optional', listIconClass1='optional', listIconClass2='optional', navIconClass1='optional', navIconClass2='optional', dataAnalyticsTrigger='optional', linkTarget='optional'}"
+   data-sly-use.link="${ 'com.metacube.cms.core.wcmusepojo.Link' @ path=href}">
+    <sly data-sly-use.helper="/apps/metacube/utility/aem-helper.js" />
+    <sly data-sly-test.siteName="${helper.siteName @context = 'text'}"/>
+    <sly data-sly-use.strContains="${ '/apps/metacube/components/utils/string/StringContains.js' @ str = link.href, strFragment = '#!MP' }" />
+   <sly data-sly-test.disableLinkCheck="${strContains.match && (siteName=='marketing-portal' || siteName=='enterprise-apps')}">
+            <a href="${link.href @context='unsafe'}" x-cq-linkchecker="skip" class="${class1} ${class2}"
+            target="${link.external && !linkTarget ? '_blank' : linkTarget || ''}" rel="${link.external || linkTarget ? 'noopener' : ''}"
+              data-analytics-trigger="${dataAnalyticsTrigger}">
+              <span class="${listIconClass1} ${listIconClass2} ${listIcon}"></span>
+               <span class="${contentClass1} ${contentClass2}">	${text @ context='html'}</span>
+              <span data-sly-test=${noRightIcon} class="${navIconClass1} ${navIconClass2} ${navIcon}"></span>
+               <p class="${linkDescriptionClass}">${linkDescription}</p>
+          </a>
+    </sly>
+    <sly data-sly-test="${!disableLinkCheck}">
+            <a href="${link.href}" class="${class1} ${class2}"
+            target="${link.external && !linkTarget ? '_blank' : linkTarget || ''}" rel="${link.external || linkTarget ? 'noopener' : ''}"
+              data-analytics-trigger="${dataAnalyticsTrigger}">
+              <span class="${listIconClass1} ${listIconClass2} ${listIcon}"></span>
+               <span class="${contentClass1} ${contentClass2}">	${text @ context='html'}</span>
+              <span data-sly-test=${noRightIcon} class="${navIconClass1} ${navIconClass2} ${navIcon}"></span>
+               <p class="${linkDescriptionClass}">${linkDescription}</p>
+          </a>
+        </sly>
+</template>
+
+<!--*/
+Usage:
+<sly data-sly-use.html="${ '/apps/metacube/components/utils/templates/html.html' }" />
+<sly data-sly-call="${html.filterListAnchor @ href='#', text='some text', dataAnalyticsTrigger='[specified value]' }" />
+*/-->
+
+
+<template
+       data-sly-template.filterListAnchor="${@ href, text, listIcon, navIcon, class1='optional', class2='optional', iconClass1='optional', iconClass2='optional', listIconClass1='optional', listIconClass2='optional', navIconClass1='optional', navIconClass2='optional', dataAnalyticsTrigger='optional', linkTarget='optional'}"
+   data-sly-use.link="${ 'com.metacube.cms.core.wcmusepojo.Link' @ path=href}">
+
+   <a href="${link.href}" class="${class1} ${class2}"
+     target="${link.external && !linkTarget ? '_blank' : linkTarget || ''}" rel="${link.external || linkTarget ? 'noopener' : ''}"
+      data-analytics-trigger="${dataAnalyticsTrigger}">
+      <span class="${listIconClass1} ${listIconClass2} ${listIcon}"></span>
+       ${text @ context='html'}
+      <span class="${navIconClass1} ${navIconClass2} ${navIcon}"></span>
+  </a>
+</template>
+
+<!--*/ Usage:
+<sly data-sly-use.html="${ '/apps/metacube/components/utils/templates/html.html' }" />
+
+<sly data-sly-call="${html.picture @ src1=imageFull.path, src2=imageSmall.path, mediaQuery='max-width: 767px',
+    altText='some alt text', cssClass='some_class'}" />
+*/-->
+<template data-sly-template.picture="${@ src1, src2='optional', mediaQuery, altText, cssClass='optional', cssPictureClass='optional'}">
+
+    <sly data-sly-test.media="${mediaQuery ? '(' : ''}${mediaQuery}${mediaQuery ? ')' : ''}" />
+
+    <picture class="${cssPictureClass}">
+        <source data-sly-test="${media && src2}" media="${media}" srcset="${src2 @ context='uri'}" />
+        <img src="${src1}" alt="${altText}" class="${cssClass}" />
+    </picture>
+
+</template>
+
+<!--*/ Usage:
+<sly data-sly-use.html="${ '/apps/metacube/components/utils/templates/html.html' }" />
+
+<sly data-sly-call="${html.smallImageFirst @ src1=imageSmall.path, src2=imageFull.path,
+    altText='some alt text', cssClass='some_class'}" />
+*/-->
+<template data-sly-template.smallImageFirst="${@ src1, src2='optional', altText, cssClass='optional', cssPictureClass='optional'}">
+
+    <picture class="${cssPictureClass}">
+        <img src="${src1}" alt="${altText}" class="${cssClass}" large-img-src="${src2}"/>
+    </picture>
+
+</template>
+
+<!--*/
+Parameters:
+linkTarget - [optional] Sets the target of the link. Include if you want to overwrite link.external
+
+Usage:
+<sly data-sly-use.html="${ '/apps/metacube/components/utils/templates/html.html' }" />
+
+<sly data-sly-call="${html.anchorImage @ href='#', title='some text', src='image source', altText='image alt text', dataAnalyticsTrigger='[specified value]' }" />
+*/-->
+
+<template
+    data-sly-template.anchorImage="${@ href, title='optional', class1='optional', class2='optional',
+    src, imgClass1='optional', imgClass2='optional', altText, dataAnalyticsTrigger='optional', linkTarget='optional'}"
+    data-sly-use.link="${ 'com.metacube.cms.core.wcmusepojo.Link' @ path=href}">
+    <a href="${link.href}" class="${class1} ${class2}" title="${title}" target="${link.external && !linkTarget ? '_blank' : linkTarget || ''}" rel="${link.external || linkTarget ? 'noopener' : ''}" data-analytics-trigger="${dataAnalyticsTrigger}" download="${link.asset}">
+        <img src="${src}" alt="${altText}" class="${imgClass1} ${imgClass2}"/>
+    </a>
+</template>
+
+<template data-sly-template.youtube="${@ largeImage, smallImage='optional', mQuery, altTxt, cssImageClass='optional', cssVideoClass}">
+
+    <div class="${cssVideoClass}__video-preview-container">
+        <sly data-sly-use.html="${ '/apps/metacube/components/utils/templates/html.html' }" />
+
+        <sly data-sly-call="${ html.picture @
+                            src1 = largeImage,
+                            src2 = smallImage,
+                            altText = altTxt,
+                            cssClass = cssImageClass,
+                            mediaQuery = mQuery }">
+        </sly>
+
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 62 62" focusable="false" class="${cssVideoClass}__icon-play">
+            <circle class="${cssVideoClass}__circle" cx="31" cy="31" r="31">
+            </circle>
+            <polygon class="${cssVideoClass}__triangle" points="24,17.6 24,43.4 41.3,30.4 ">
+            </polygon>
+        </svg>
+
+    </div>
+
+	<!--*/ create youtube playable container only when page is not edit mode */-->
+    <sly data-sly-test="${!wcmmode.edit}">
+        <div class="${cssVideoClass}__youtube-container">
+            <div class="${cssVideoClass}__youtube-placeholder"></div>
+        </div>
+    </sly>
+
+</template>

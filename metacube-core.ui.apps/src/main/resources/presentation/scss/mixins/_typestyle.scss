@@ -1,0 +1,237 @@
+@mixin font-output($family, $weight, $size, $lineHeight, $style: normal) {
+    @if not $lineHeight and not $size {
+        //Not sure we need family here, as all fonts appear the same typeface.
+        //No harm should come, if you wish to uncomment:
+        //font-family: $family;
+        font-weight: $weight;
+        @if $style not normal {
+            font-style: $style;
+        }
+    } @else if not $lineHeight {
+        font: $style $weight $size $family;
+    } @else {
+        font: $style $weight unquote("#{$size}/#{$lineHeight}") $family;
+    }
+}
+
+@mixin font-regular($size: null, $lineHeight: null) {
+    $weight: $font-weight-regular;
+    @include font-output($default-font-family, $weight, $size, $lineHeight);
+}
+
+@mixin font-regular-bold($size: null, $lineHeight: null) {
+    $weight: $font-weight-bold;
+    @include font-output($default-font-family, $weight, $size, $lineHeight);
+}
+
+@mixin font-regular-italic($size: null, $lineHeight: null) {
+    $weight: $font-weight-regular;
+    @include font-output($default-font-family, $weight, $size, $lineHeight, italic);
+}
+
+@mixin font-medium($size: null, $lineHeight: null) {
+    $weight: $font-weight-medium;
+    @include font-output($default-font-family, $weight, $size, $lineHeight);
+}
+
+@mixin font-medium-italic($size: null, $lineHeight: null) {
+    $weight: $font-weight-medium;
+    @include font-output($default-font-family, $weight, $size, $lineHeight, italic);
+}
+
+@mixin font-semibold($size: null, $lineHeight: null) {
+    $weight: $font-weight-semibold;
+    @include font-output($default-font-family, $weight, $size, $lineHeight);
+}
+
+@mixin font-bold($size: null, $lineHeight: null) {
+    $weight: $font-weight-bold;
+    @include font-output($default-font-family, $weight, $size, $lineHeight);
+}
+
+@mixin font-monotype($size, $lineHeight: null) {
+    $weight: $font-weight-regular;
+    @include font-output($monotype-font-family, $weight, $size, $lineHeight);
+}
+
+@mixin font-heading($size: null, $lineHeight: null, $weight: $font-weight-regular, $style: normal) {
+    @include font-output($secondary-font-name, $weight, $size, $lineHeight, $style);
+}
+
+@mixin font-corpos-bold($size, $lineHeight) {
+    $weight: $font-weight-bold;
+    @include font-output($tertiary-font-name, $weight, $size, $lineHeight);
+}
+
+@mixin font-corpos-bold-italic($size, $lineHeight) {
+    $weight: $font-weight-bold;
+    @include font-output($tertiary-font-name, $weight, $size, $lineHeight, italic);
+}
+
+@mixin font-corpos-regular($size, $lineHeight) {
+    $weight: $font-weight-regular;
+    @include font-output($tertiary-font-name, $weight, $size, $lineHeight)
+}
+
+@mixin font-corpos-italic($size, $lineHeight) {
+    $weight: $font-weight-regular;
+    @include font-output($tertiary-font-name, $weight, $size, $lineHeight, italic);
+}
+
+@mixin main-heading {
+    @include font-heading(30px, 1);
+
+    @include media($xlarge) {
+        @include font-heading(40px, 1);
+    }
+}
+
+@mixin heading-reg {
+    @include font-heading(30px, 1);
+
+    @include media($xlarge) {
+        @include font-heading(36px, 1);
+    }
+}
+
+@mixin subhead-reg {
+    @include font-heading(28px, 34/28);
+
+    @include media($xlarge) {
+        @include font-heading(30px, 38/30);
+    }
+}
+
+@mixin featured-heading {
+    @include font-heading(32px, 1);
+}
+
+@mixin subhead-italic {
+    @include font-heading(28px, 34/28, $font-weight-regular, italic);
+
+    @include media($xlarge) {
+        @include font-heading(30px, 38/30, $font-weight-regular, italic);
+    }
+}
+
+@mixin section-reg {
+    @include font-heading(24px, 28/24);
+}
+
+@mixin section-italic {
+    @include font-heading(24px, 28/24, $font-weight-regular, italic);
+}
+
+@mixin subsection-reg {
+    @include font-heading(18px, 1);
+}
+
+@mixin subsection-italic {
+    @include font-heading(18px, 1, $font-weight-regular, italic);
+}
+
+@mixin small-subhead-reg {
+    @include font-heading(16px, 1);
+}
+
+@mixin accent-reg {
+    @include font-corpos-regular(26px, 32/26);
+}
+
+@mixin accent-bold {
+    @include font-corpos-bold(26px, 32/26);
+}
+
+@mixin call-out-text-reg {
+    @include font-corpos-regular(18px, 24/18);
+}
+
+@mixin call-out-text-italic {
+    @include font-corpos-italic(18px, 24/18);
+}
+
+@mixin call-out-text-bold {
+    @include font-corpos-bold(18px, 24/18);
+}
+
+@mixin call-out-text-bold-italic {
+    @include font-corpos-bold-italic(18px, 24/18);
+}
+
+@mixin featured-copy-reg {
+    @include font-regular(14px, 21/14);
+}
+
+@mixin featured-copy-bold {
+    @include font-regular-bold(14px, 1.5);
+}
+
+@mixin highlight-copy-reg {
+    @include font-regular(13px, 20/13);
+}
+
+@mixin highlight-copy-bold {
+    @include font-regular-bold(13px, 20/13);
+}
+
+@mixin highlight-copy-italic {
+    @include font-regular-italic(13px, 20/13);
+}
+
+@mixin copy-narrow-reg {
+    @include font-regular(12px, 18/12);
+}
+
+@mixin copy-narrow-bold {
+    @include font-regular-bold(12px, 18/12);
+}
+
+@mixin copy-narrow-italic {
+    @include font-regular-italic(12px, 18/12);
+}
+
+@mixin copy-wide-reg {
+    @include font-regular(12px, 22/12);
+}
+
+@mixin copy-wide-bold {
+    @include font-regular-bold(12px, 22/12);
+}
+
+@mixin copy-wide-italic {
+    @include font-regular-italic(12px, 22/12);
+}
+
+@mixin disclaimer {
+    @include font-regular(11px, 24/11);
+}
+
+@mixin uppercase {
+    text-transform: uppercase;
+}
+
+@mixin dropdown-sub-link {
+    @include featured-copy-reg;
+    @include media($tablet) {
+        @include copy-wide-bold;
+    }
+
+    @include media($desktop) {
+        @include highlight-copy-bold;
+    }
+}
+
+@mixin footer-link {
+    @include featured-copy-reg;
+    @include media($tablet) {
+        @include copy-wide-bold;
+    }
+}
+
+@mixin title-hero {
+    @include font-heading(50px, 1);
+
+    @include media($tablet) {
+        @include font-heading(60px, 1);
+    }
+}

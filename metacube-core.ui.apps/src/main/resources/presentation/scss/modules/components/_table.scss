@@ -1,0 +1,17 @@
+.table {
+    width: 100%;
+
+    &__row {
+        color: black;
+    }
+
+    &__head, &__col {
+        border: 1px solid $black;
+        padding: $space-2;
+        text-align: left;
+    }
+
+    &__head {
+        background: $very-light-grey;
+    }
+}

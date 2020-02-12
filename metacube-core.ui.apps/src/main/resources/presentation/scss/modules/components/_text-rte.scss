@@ -1,0 +1,15 @@
+.text-rte {
+    &__title {
+        @include featured-copy-bold;
+    }
+
+    &__para {
+        display: block;
+    }
+
+    ul {
+        list-style: initial;
+        padding-left: 40px;
+        margin: 12px 0;
+    }
+}

@@ -1,0 +1,5 @@
+@mixin site-specific($site-class) {
+    body.#{$site-class} & {
+        @content
+    }
+}

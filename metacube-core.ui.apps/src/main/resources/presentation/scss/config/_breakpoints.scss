@@ -1,0 +1,28 @@
+$xxlarge: 1200px;
+$xlarge: 980px;
+$large: 768px;
+$medium: 480px;
+$small: 320px;
+$large-max: $xlarge - 1;
+$large-min: $large;
+$medium-max: $large - 1;
+$medium-min: $medium;
+$small-max: $medium - 1;
+$small-min: $small;
+
+$small-only: min-width 0 max-width $small-max;
+$medium-only: min-width $medium-min max-width $medium-max;
+$large-only: min-width $large-min max-width $large-max;
+
+$lt-large: max-width $medium-max;
+
+//Bourbon Neat Breakpoints
+$mobile-only: new-breakpoint(max-width $medium-max 4);
+$mobile: new-breakpoint(min-width $small 4);
+$tablet: new-breakpoint(min-width $large 12);
+$desktop: new-breakpoint(min-width $xlarge 12);
+$large-desktop: new-breakpoint(min-width $xxlarge 12);
+
+//use this to breakout of the wrapper on mobile
+$mobile-breakout-well: -((100% - 87.5%)* 100/87.5) /2;
+$mobile-debreakout-well: (100% - 87.5%) /2;

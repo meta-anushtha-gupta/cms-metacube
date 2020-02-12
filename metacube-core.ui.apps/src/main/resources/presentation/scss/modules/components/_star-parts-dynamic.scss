@@ -1,0 +1,22 @@
+.star-parts-dynamic {
+    &__icon {
+        &--right-arrow-key {
+            &:before {
+                content: $icon-caret-right-thin;
+            }
+        }
+    }
+
+    &__accordion_active_icon {
+        &--right-arrow-key {
+            &:before {
+                content: $icon-caret-right-thin;
+                -webkit-transform: rotate(90deg);
+                moz-transform: rotate(90deg);
+                -o-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                transform: rotate(90deg);
+            }
+        }
+    }
+}

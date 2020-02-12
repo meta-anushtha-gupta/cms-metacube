@@ -1,0 +1,39 @@
+.printAll-container {
+    display: none;
+
+    header, footer, .col-3 {
+        display: none;
+    }
+
+    .col-9 {
+        @include span-columns(12);
+    }
+
+    .page-content {
+        display: block;
+
+        & > .wrapper {
+            display: block;
+
+            & > .col-9 {
+                display: block;
+
+                .dropdown, .newpar, .par {
+                    display: none;
+                }
+
+                b {
+                    display: inline-block;
+                }
+
+                .pop-up {
+                    display: none;
+                }
+
+                .button-link-list {
+                    display: none;
+                }
+            }
+        }
+    }
+}

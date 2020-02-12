@@ -1,0 +1,19 @@
+.hide {
+    display: none !important;
+
+    &-large {
+        @include media($large) {
+            display: none !important;
+        }
+
+        &--height {
+            @include media($large) {
+                height: 0 !important;
+            }
+        }
+    }
+
+    &--height {
+        height: 0 !important;
+    }
+}

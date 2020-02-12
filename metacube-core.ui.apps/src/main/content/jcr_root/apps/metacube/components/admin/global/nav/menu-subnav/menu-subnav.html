@@ -1,0 +1,13 @@
+<sly data-sly-use.menuList="${ '/apps/metacube/components/utils/multifield-json.js' @ mfName='colLinks' }" />
+
+<div class="aem-editorial" data-sly-unwrap="${!wcmmode.edit}"  data-sly-test.hasContent="${menuList.items}">
+	<ul>
+		<sly data-sly-list.menuListJson="${menuList.items}">
+			<li class="top-nav__item">
+				<a href="${menuListJson.linkTarget @ extension='html'}" target="_self"
+			   		class="top-nav__link">${menuListJson.linkText}</a>
+	   		</li>
+		</sly>
+	</ul>
+</div>
+<sly data-sly-test="${wcmmode.edit && !hasContent}" data-sly-include="placeholder.html" />

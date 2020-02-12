@@ -1,0 +1,36 @@
+// Styling for disabling links and buttons
+.disabled {
+    &.button, &.link {
+        cursor: default;
+        pointer-events: none;
+
+        &:hover,
+        &:focus {
+            animation: none;
+            cursor: default;
+        }
+    }
+
+    &.button {
+        background-color: $silver!important;
+
+        &:hover,
+        &:focus {
+            animation: none;
+            background-color: $silver;
+        }
+    }
+
+    &.link {
+        color: $silver;
+
+        &:before, &:after {
+            color: $silver!important;
+        }
+
+        &:link, &:visited, &:hover, &:active, &:focus {
+            animation: none;
+            color: $silver!important;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.legal {
+    background-color: $white;
+    padding: $space-4 0px;
+    color: $dove-gray;
+
+    .footer__link {
+        margin-left: 0px;
+        display: block;
+        color: $dove-gray;
+
+        @include media($tablet) {
+            margin-left: $space-14;
+            display: inline-block;
+        }
+
+        @include media($xlarge) {
+            &:hover,
+            &:focus {
+                animation: none;
+                color: $astral;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .pull--right {
+        float: right;
+    }
+
+    .link {
+        margin: 0 $space-2;
+
+        &:hover {
+            color: $azure-radiance;
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+body {
+    padding-bottom: 0px;
+}

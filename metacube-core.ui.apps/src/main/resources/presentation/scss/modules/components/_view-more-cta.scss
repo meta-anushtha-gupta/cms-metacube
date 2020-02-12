@@ -1,0 +1,33 @@
+.view-more-cta {
+    display: none;
+
+    @include font-regular-bold(13px, 1);
+    width: 100%;
+    border: $silver solid 1px;
+    cursor: pointer;
+    color: $denim;
+    font-weight: bold;
+    padding: $space-2 0;
+    text-align: center;
+    transition: color $speed-4 linear 0s;
+
+    &:hover {
+        color: $azure-radiance;
+    }
+
+    .icon-mb {
+        @extend .icon-arrow-down-square;
+        margin-left: $space;
+        vertical-align: text-bottom;
+    }
+
+    &--visible {
+        display: block;
+    }
+
+    &--less {
+        .icon-mb {
+            @extend .icon-arrow-up-square;
+        }
+    }
+}

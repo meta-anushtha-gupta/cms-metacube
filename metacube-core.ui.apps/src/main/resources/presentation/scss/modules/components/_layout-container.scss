@@ -1,0 +1,51 @@
+.column-display {
+    vertical-align: top;
+    display: inline-block;
+
+    & > div,
+    .column-display__container {
+        @include span-columns(12);
+    }
+
+    &--2 {
+        & > div,
+        & > .column-display__container {
+            @include media($tablet) {
+                @include span-columns(6);
+                @include omega(2n);
+            }
+        }
+    }
+
+    &--3 {
+        & > div,
+        & > .column-display__container {
+            @include media($tablet) {
+                @include span-columns(6);
+                @include omega(2n);
+            }
+
+            @include media($desktop) {
+                @include omega-reset(2n);
+                @include span-columns(4);
+                @include omega(3n);
+            }
+        }
+    }
+
+    &--4 {
+        & > div,
+        & > .column-display__container {
+            @include media($tablet) {
+                @include span-columns(6);
+                @include omega(2n);
+            }
+
+            @include media($desktop) {
+                @include omega-reset(2n);
+                @include span-columns(3);
+                @include omega(4n);
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.footer {
+    text-align: center;
+    border-top: thin solid $dove-gray;
+    height: $space * 12;
+    padding-top: $space-4;
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-size: 14px;
+
+    &__link {
+        margin-left : 10px;
+        color: $boston-blue;
+
+        &:hover {
+            color: $pacific-blue;
+        }
+    }
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 60px;
+}

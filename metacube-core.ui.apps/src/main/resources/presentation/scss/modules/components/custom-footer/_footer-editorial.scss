@@ -1,0 +1,18 @@
+.footer {
+    &__accordion-container {
+        &--editorial {
+            display: block !important;
+        }
+    }
+
+    &__accordion-item {
+        &--column-link-list-editorial {
+            display: flex;
+            flex-direction: row;
+        }
+
+        &--stay-connected-editorial {
+            flex-direction: column;
+        }
+    }
+}

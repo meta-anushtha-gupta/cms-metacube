@@ -1,0 +1,14 @@
+<sly data-sly-include="partials/header.html" />
+
+<div class="aem-editorial" data-sly-unwrap="${!wcmmode.edit}"
+	data-sly-test="${currentPage.properties.redirectTarget}"
+	data-sly-resource="${ @ path='redirect', resourceType='metacube/components/admin/redirect' }">
+</div>
+
+<sly data-sly-include="/apps/metacube/components/utils/templates/loader.html" />
+
+<main class="page-content">
+    <sly data-sly-include="partials/main.html" />
+</main>
+
+<sly data-sly-include="partials/footer.html" />

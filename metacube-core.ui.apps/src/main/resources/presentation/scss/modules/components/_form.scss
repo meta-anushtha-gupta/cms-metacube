@@ -1,0 +1,102 @@
+.form {
+    display: block;
+
+    &__block {
+        @include span-columns(12);
+        float: none;
+        border: 1px solid $alto;
+        box-shadow: 3px 3px $space 0px $silver;
+
+        @include media($tablet) {
+            @include span-columns(8.4);
+            @include shift(1.8);
+            float: none;
+        }
+    }
+
+    &__title {
+        display: block;
+        @include section-reg;
+        padding: $space-2 $space-3;
+        border-bottom: 1px solid $alto;
+    }
+
+    &__group {
+        padding: $space-2 $space-3;
+        @include featured-copy-reg;
+
+        &:last-child {
+            text-align: right;
+        }
+
+        .button {
+            font-size: 14px;
+            min-width: 110px;
+            border-radius: 0;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__input-group {
+        margin-top: $space-2;
+        display: block;
+    }
+
+    &__control {
+        width: 100%;
+        height: 34px;
+        padding: $space+1 $space-2+2;
+        border: 1px solid $alto;
+
+        &:focus {
+            border: 1px solid $cornflower-blue;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+        }
+    }
+
+    &__link {
+        color: $astral;
+
+        &:hover {
+            text-decoration: underline;
+            color: $bay-of-many;
+        }
+
+        &-text {
+            display: inline-block;
+        }
+
+        &-container {
+            margin-bottom: $space-2;
+        }
+    }
+
+    &__error-block {
+        display: inline-block;
+
+        &-container {
+            @include span-columns(11);
+            @include shift(0.5);
+            border: 3px solid $guardsman-red;
+            color: $guardsman-red;
+            background-color: #ffEEEE;
+            padding: $space-2 $space-3;
+            margin-bottom: $space-2;
+            @include featured-copy-reg;
+            float: none;
+
+            @include media($tablet) {
+                @include span-columns(7);
+                @include shift(2.5);
+                float: none;
+            }
+        }
+
+        &--hidden {
+            display: none;
+        }
+    }
+}

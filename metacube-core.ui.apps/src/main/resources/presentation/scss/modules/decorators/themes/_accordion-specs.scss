@@ -1,0 +1,47 @@
+.accordion--specs {
+    &:not(.accordion--disabled-small) {
+        &:not(.accordion--disabled-large) {
+            .accordion {
+                &__title {
+                    &:after {
+                        color: $denim;
+                        font-size: 15px;
+                        right: 0;
+                    }
+
+                    &--disabled {
+                        &:after {
+                            color: $silver;
+                        }
+                    }
+                }
+
+                &__button {
+                    @include copy-wide-reg;
+                }
+
+                &__pane {
+                    padding: $space-2 0;
+                }
+
+                &__item {
+                    &:last-child {
+                        border-bottom: 1px solid $silver;
+                    }
+
+                    &--active {
+                        .accordion {
+                            &__button {
+                                color: $denim;
+                            }
+
+                            &__pane {
+                                border-top: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

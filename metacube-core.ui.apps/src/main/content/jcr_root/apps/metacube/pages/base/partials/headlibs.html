@@ -1,0 +1,30 @@
+<sly data-sly-use.helper="/apps/metacube/utility/aem-helper.js"
+    />
+<sly data-sly-test="${pageProperties.noDispatcherCache}" data-sly-use="/apps/metacube/utility/no-cache-header.js"/>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/etc/designs/metacube/css/main.css" />
+<link rel="stylesheet" href="/etc/designs/metacube/css/metacube.css" />
+
+<sly data-sly-include="partials/pscss.html" />
+
+<script>
+    var metacube = window.metacube || {};
+    metacube.ns = function () {
+        var obj = window.metacube;
+        for (var x = 0, len = arguments.length; x < len; x++) {
+            var ns = arguments[x];
+            obj[ns] = obj[ns] || {};
+            obj = obj[ns];
+        }
+        return obj;
+    };
+</script>
+
+<!--/* Initializes the Experience Manager authoring UI */-->
+<sly data-sly-include="/libs/wcm/core/components/init/init.jsp" />
+
+<!--/* https://experienceleaguecommunities.adobe.com/t5/Adobe-Experience-Manager/403-Forbidden-error-while-executing-servlet/td-p/187653 */-->
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}"></div>
+<clientlib data-sly-call="${clientLib.all @ categories='granite.csrf.standalone'}" data-sly-unwrap/>

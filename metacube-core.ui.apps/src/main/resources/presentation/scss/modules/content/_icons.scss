@@ -1,0 +1,483 @@
+@font-face {
+    // font-family: 'micro-icons';
+    // src: url('#{$icomoon-font-path}/micro-icons.eot?yhrkl');
+    // src: url('#{$icomoon-font-path}/micro-icons.eot?yhrkl#iefix') format('embedded-opentype'),
+    //     url('#{$icomoon-font-path}/micro-icons.ttf?yhrkl') format('truetype'),
+    //     url('#{$icomoon-font-path}/micro-icons.woff?yhrkl') format('woff'),
+    //     url('#{$icomoon-font-path}/micro-icons.svg?yhrkl#micro-icons') format('svg');
+    font-family: '#{$icomoon-font-family}';
+    src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?b8z80k');
+    src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?b8z80k#iefix') format('embedded-opentype'),
+        url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?b8z80k') format('truetype'),
+        url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?b8z80k') format('woff'),
+        url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?b8z80k##{$icomoon-font-family}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+
+    /* use !important to prevent issues with browser extensions that change fonts */
+    // font-family: 'micro-icons' !important;
+    font-family: '#{$icomoon-font-family}' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cross {
+    &:before {
+        content: $icon-cross;
+    }
+}
+
+.icon-pencil {
+    &:before {
+        content: $icon-pencil;
+    }
+}
+
+.icon-logout {
+    &:before {
+        content: $icon-logout;
+    }
+}
+
+.icon-movie {
+    &:before {
+        content: $icon-movie;
+    }
+}
+
+.icon-pdf {
+    &:before {
+        content: $icon-pdf;
+    }
+}
+
+.icon-web-link {
+    &:before {
+        content: $icon-web-link;
+    }
+}
+
+.icon-barcode {
+    &:before {
+        content: $icon-barcode;
+    }
+}
+
+.icon-call {
+    &:before {
+        content: $icon-call;
+    }
+}
+
+.icon-chat {
+    &:before {
+        content: $icon-chat;
+    }
+}
+
+.icon-list-menu {
+    &:before {
+        content: $icon-list-menu;
+    }
+}
+
+.icon-envelope {
+    &:before {
+        content: $icon-envelope;
+    }
+}
+
+.icon-profile {
+    &:before {
+        content: $icon-profile;
+    }
+}
+
+.icon-list-alt {
+    &:before {
+        content: $icon-list-alt;
+    }
+}
+
+.icon-caret-down-small {
+    &:before {
+        content: $icon-caret-down-small;
+    }
+}
+
+.icon-dark-printer {
+    &:before {
+        content: $icon-dark-printer;
+    }
+}
+
+.icon-rate-star-button {
+    &:before {
+        content: $icon-rate-star-button;
+    }
+}
+
+.icon-sort-descending {
+    &:before {
+        content: $icon-sort-descending;
+    }
+}
+
+.icon-sort-down {
+    &:before {
+        content: $icon-sort-down;
+    }
+}
+
+.icon-descendant {
+    &:before {
+        content: $icon-descendant;
+    }
+}
+
+.icon-chained-links {
+    &:before {
+        content: $icon-chained-links;
+    }
+}
+
+.icon-world {
+    &:before {
+        content: $icon-world;
+    }
+}
+
+.icon-forward-right-arrow-button {
+    &:before {
+        content: $icon-forward-right-arrow-button;
+    }
+}
+
+.icon-paperclip {
+    &:before {
+        content: $icon-paperclip;
+    }
+}
+
+.icon-check {
+    &:before {
+        content: $icon-check;
+    }
+}
+
+.icon-warning {
+    &:before {
+        content: $icon-warning;
+    }
+}
+
+.icon-mb-dealer-location {
+    &:before {
+        content: $icon-mb-dealer-location;
+    }
+}
+
+.icon-mb-collision-center {
+    &:before {
+        content: $icon-mb-collision-center;
+    }
+}
+
+.icon-AMG_logo-performance-center {
+    &:before {
+        content: $icon-AMG_logo-performance-center;
+    }
+}
+
+.icon-AMG_logo-performance-center-elite {
+    &:before {
+        content: $icon-AMG_logo-performance-center-elite;
+    }
+}
+
+.icon-search {
+    &:before {
+        content: $icon-search;
+    }
+}
+
+.icon-car-rear {
+    &:before {
+        content: $icon-car-rear;
+    }
+}
+
+.icon-caret-right-amg {
+    &:before {
+        content: $icon-caret-right-amg;
+    }
+}
+
+.icon-acceleration {
+    &:before {
+        content: $icon-acceleration;
+    }
+}
+
+.icon-arrow-down-square {
+    &:before {
+        content: $icon-arrow-down-square;
+    }
+}
+
+.icon-arrow-left-square {
+    &:before {
+        content: $icon-arrow-left-square;
+    }
+}
+
+.icon-arrow-right-square {
+    &:before {
+        content: $icon-arrow-right-square;
+    }
+}
+
+.icon-arrow-up-square {
+    &:before {
+        content: $icon-arrow-up-square;
+    }
+}
+
+.icon-calculator {
+    &:before {
+        content: $icon-calculator;
+    }
+}
+
+.icon-download-arrow {
+    &:before {
+        content: $icon-download-arrow;
+    }
+}
+
+.icon-exit {
+    &:before {
+        content: $icon-exit;
+    }
+}
+
+.icon-gears {
+    &:before {
+        content: $icon-gears;
+    }
+}
+
+.icon-horsepower {
+    &:before {
+        content: $icon-horsepower;
+    }
+}
+
+.icon-hybrid {
+    &:before {
+        content: $icon-hybrid;
+    }
+}
+
+.icon-minus {
+    &:before {
+        content: $icon-minus;
+    }
+}
+
+.icon-plus {
+    &:before {
+        content: $icon-plus;
+    }
+}
+
+.icon-rain {
+    &:before {
+        content: $icon-rain;
+    }
+}
+
+.icon-request_a_test_drive {
+    &:before {
+        content: $icon-request_a_test_drive;
+    }
+}
+
+.icon-solid-circle {
+    &:before {
+        content: $icon-solid-circle;
+    }
+}
+
+.icon-steering-wheel {
+    &:before {
+        content: $icon-steering-wheel;
+    }
+}
+
+.icon-sun {
+    &:before {
+        content: $icon-sun;
+    }
+}
+
+.icon-torque {
+    &:before {
+        content: $icon-torque;
+    }
+}
+
+.icon-towing {
+    &:before {
+        content: $icon-towing;
+    }
+}
+
+.icon-compare {
+    &:before {
+        content: $icon-compare;
+    }
+}
+
+.icon-download {
+    &:before {
+        content: $icon-download;
+    }
+}
+
+.icon-special-offers {
+    &:before {
+        content: $icon-special-offers;
+    }
+}
+
+.icon-view-inventory {
+    &:before {
+        content: $icon-view-inventory;
+    }
+}
+
+.icon-trade_in_value {
+    &:before {
+        content: $icon-trade_in_value;
+    }
+}
+
+.icon-apply_for_credit {
+    &:before {
+        content: $icon-apply_for_credit;
+    }
+}
+
+.icon-model-chooser {
+    &:before {
+        content: $icon-model-chooser;
+    }
+}
+
+.icon-caret-down-thin {
+    &:before {
+        content: $icon-caret-down-thin;
+    }
+}
+
+.icon-caret-down {
+    &:before {
+        content: $icon-caret-down;
+    }
+}
+
+.icon-caret-left-thin {
+    &:before {
+        content: $icon-caret-left-thin;
+    }
+}
+
+.icon-caret-right-thin {
+    &:before {
+        content: $icon-caret-right-thin;
+    }
+}
+
+.icon-caret-right {
+    &:before {
+        content: $icon-caret-right;
+    }
+}
+
+.icon-caret-up-thin {
+    &:before {
+        content: $icon-caret-up-thin;
+    }
+}
+
+.icon-caret-up {
+    &:before {
+        content: $icon-caret-up;
+    }
+}
+
+.icon-pin {
+    &:before {
+        content: $icon-pin;
+    }
+}
+
+.icon-social-facebook {
+    &:before {
+        content: $icon-social-facebook;
+    }
+}
+
+.icon-social-googleplus {
+    &:before {
+        content: $icon-social-googleplus;
+    }
+}
+
+.icon-social-instagram {
+    &:before {
+        content: $icon-social-instagram;
+    }
+}
+
+.icon-social-twitter {
+    &:before {
+        content: $icon-social-twitter;
+    }
+}
+
+.icon-social-youtube {
+    &:before {
+        content: $icon-social-youtube;
+    }
+}
+
+.icon-AMG_logo {
+    &:before {
+        content: $icon-AMG_logo;
+    }
+}
+
+.icon-smart {
+    &:before {
+        content: $icon-smart;
+    }
+}
+
+.icon-preferred-dealer {
+    &:before {
+        content: $icon-preferred-dealer;
+    }
+}

@@ -1,0 +1,11 @@
+@mixin open-nav() {
+    body[data-menu-state="open"] & {
+        @content
+    }
+}
+
+@mixin open-subnav() {
+    body[data-submenu-state="open"] & {
+        @content
+    }
+}

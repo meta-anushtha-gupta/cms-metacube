@@ -1,0 +1,97 @@
+.category-list, .order-guides {
+    .model__specification {
+        &:last-child {
+            .model__specification-field {
+                padding-bottom: $space-3;
+            }
+        }
+
+        &-field {
+            display: block;
+            font-size: 18px;
+            padding: 0;
+
+            &:first-child {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+
+        &:first-child, &:last-child {
+            .model__specification-field {
+                padding: 0;
+            }
+        }
+
+        &-title {
+            @include section-italic;
+            background: $dusty-gray;
+            color: $white;
+            padding: $space $space-2;
+        }
+
+        &-subcategory {
+            width: 100%;
+            margin-bottom: $space;
+
+            @include media($tablet) {
+                @include span-columns(6);
+
+                &:nth-child(2n) {
+                    margin-right: 0;
+                }
+            }
+
+            &-container {
+                @include clearfix;
+                background: $alto;
+                list-style: disc;
+                padding: $space $space-6 0;
+            }
+
+            &-list {
+                border: 1px solid $alto;
+                list-style: none;
+                padding: 0;
+
+                li {
+                    padding: $space $space-2 0;
+                    clear: both;
+                    float: left;
+                    width: 100%;
+
+                    &:nth-of-type(2n) {
+                        background: $white;
+                    }
+
+                    .model__specification-subcategory {
+                        &:nth-of-type(2n) {
+                            font-weight: $font-weight-regular;
+                        }
+
+                        span {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            &-image {
+                background: none;
+                list-style: none;
+
+                .model__specification-subcategory {
+                    width: 100%;
+                    float: none;
+                }
+
+                img {
+                    display: table;
+                    margin: 0 auto;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

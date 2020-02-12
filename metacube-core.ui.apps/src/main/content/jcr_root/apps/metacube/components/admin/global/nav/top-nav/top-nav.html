@@ -1,0 +1,43 @@
+<sly data-sly-use.imageFull="${ '/apps/metacube/components/utils/image.js' @ imagePath='companylogo' }" 
+    data-sly-use.imageSmall="${ '/apps/metacube/components/utils/image.js' @ imagePath='companylogoSmall' }" 
+    data-sly-use.html="${ '/apps/metacube/components/utils/templates/html.html' }"
+    data-sly-use.helper="/apps/metacube/utility/aem-helper.js"/>
+<div class="top-nav__hamburger">
+    <span class="top-nav__hamburger-line"></span>
+    <span class="top-nav__hamburger-line"></span>
+    <span class="top-nav__hamburger-line"></span>
+</div>
+<nav data-sly-test.hasContent="${ imageFull.hasContent}" class="top-nav" data-submenu-model="true">
+    <div class="top-nav__level wrapper">
+
+        <div class="sub-nav__level sub-nav__level--left">
+            <div class="top-nav__item top-nav__item--company-title">
+                <div class="top-nav__logo_container">
+                    <sly data-sly-test.home="${['/content',helper.siteName,'home.html'] @ join = '/'}">
+                        <a href="${home}" class="top-nav__link">
+                            <span class="logo__container top-nav__span">
+                                <sly data-sly-call="${html.picture @ src1=imageFull.path, src2=imageSmall.path, mediaQuery='max-width: 767px',
+                                altText=properties.companylogoAlt, cssClass='sprinter__logo' }" />
+                            </span>
+                        </a>
+                    </sly>
+                </div>
+        </div>
+            <div data-sly-test ="${properties.menu}"class="top-nav__drop-down top-nav__drop-down--single">
+            <div data-sly-test ="${properties.menu}" class="top-nav__item top-nav__item--menu">
+                <a href="#" class="top-nav__link top-nav__link_parent top-nav__link_menu" data-open="false">
+                    <span class="top-nav__label">${properties.menu}</span>
+                </a>
+                <div class="top-nav__menu-container top-nav__sub-nav top-nav__level" data-analytics-container="{ 'blade': 'menu' }">
+                    <a href="#" class="top-nav__link_back-btn">
+                        ${properties.menu}
+                    </a>
+                    <div data-sly-resource="${ @ path='../menu-subnav', resourceType='/apps/metacube/components/admin/global/nav/menu-subnav', wcmmode='disabled' }"></div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</nav>
+<sly data-sly-test="${wcmmode.edit && !hasContent}" data-sly-include="placeholder.html" />

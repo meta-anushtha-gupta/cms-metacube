@@ -1,0 +1,138 @@
+.vehicle-model {
+    padding: $space-4 0;
+
+    &__section-title {
+        @include subsection-reg;
+    }
+
+    &__title {
+        @include featured-heading;
+    }
+
+    &__section {
+        display: flex;
+        flex-wrap: wrap;
+
+        &-block {
+            margin-bottom: $space-8;
+            padding-left: $space-3;
+            padding-right: $space-3;
+            width: 100%;
+
+            @include media($tablet) {
+                width: 25%;
+            }
+
+            &.hidden {
+                display: none;
+            }
+
+            hr {
+                margin-bottom: $space-3;
+                border-style: dashed;
+                border-bottom: 0;
+            }
+        }
+    }
+
+    &__image {
+        width: 85%;
+        margin: 20px auto;
+
+        &_section {
+            min-height: 135px;
+            text-align: center;
+        }
+    }
+
+    &__dropdown {
+        &__title {
+            @include featured-copy-reg;
+
+            &:hover {
+                color: $havelock-blue;
+                cursor: pointer;
+            }
+        }
+
+        &__menu {
+            min-width: 220px;
+            border: 1px solid $silver;
+            background-clip: padding-box;
+            border: 1px solid rgba(0,0,0,.15);
+            box-shadow: 0 6px 12px rgba(0,0,0,.175);
+            position: absolute;
+            background: $white;
+            display: none;
+
+            @include media($tablet) {
+                min-width: 190px;
+            }
+
+            @include media($desktop) {
+                min-width: 220px;
+            }
+
+            &-items {
+                &:first-child {
+                    .vehicle-model__dropdown__link {
+                        padding-top: $space+3;
+                    }
+                }
+
+                &:last-child {
+                    .vehicle-model__dropdown__link {
+                        padding-bottom: $space+3;
+                    }
+                }
+            }
+        }
+
+        &--open {
+            display: block;
+        }
+
+        &__link {
+            padding: 3px $space-4;
+            display: block;
+            color: $scorpion;
+            @include featured-copy-reg;
+
+            &:hover {
+                background-color: $wild-sand;
+            }
+
+            &--code {
+                float: right;
+                margin-left: $space;
+            }
+        }
+
+
+    }
+
+    .icon-caret-down-small {
+        font-size: 8px;
+        color: $havelock-blue;
+        margin-right: $space;
+    }
+
+    .category {
+        &--filters {
+            &-list {
+                &-item {
+                    color: $scorpion;
+
+                    &:hover {
+                        color: $havelock-blue;
+                        opacity: 1;
+                    }
+
+                    &--active {
+                        color: $havelock-blue;
+                    }
+                }
+            }
+        }
+    }
+}

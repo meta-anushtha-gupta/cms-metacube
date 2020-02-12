@@ -1,0 +1,14 @@
+.separator {
+    &-top {
+        border-top: 1px solid $silver;
+    }
+
+    &-bottom {
+        border-bottom: 1px solid $silver;
+    }
+
+    &-both {
+        border-top: 1px solid $silver;
+        border-bottom: 1px solid $silver;
+    }
+}

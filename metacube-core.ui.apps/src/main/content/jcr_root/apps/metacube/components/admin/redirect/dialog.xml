@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="350"
+    xtype="dialog">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <tabs jcr:primaryType="cq:TabPanel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <options
+                    jcr:primaryType="cq:Widget"
+                    anchor="100%"
+                    title="Options"
+                    xtype="panel">
+                    <items jcr:primaryType="cq:WidgetCollection">
+                        <redirect
+                            jcr:primaryType="nt:unstructured"
+                            fieldDescription="This redirect will override any redirect set in the page properties."
+                            fieldLabel="Redirect"
+                            name="./redirectTarget"
+                            rootPath="/content"
+                            xtype="pathfield"/>
+                    </items>
+                </options>
+            </items>
+        </tabs>
+    </items>
+</jcr:root>

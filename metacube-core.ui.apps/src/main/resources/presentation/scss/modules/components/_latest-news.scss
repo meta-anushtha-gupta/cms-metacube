@@ -1,0 +1,106 @@
+.latest-news {
+    &__section {
+        padding: $space-4 0;
+
+        &-container {
+            background: $dusty-gray;
+            padding: $space-2 $space-3;
+
+            .category--filters {
+                display: flex;
+                flex-wrap: wrap;
+
+                &-list {
+                    &#services {
+                        order: 3;
+                        -webkit-order: 3;
+                    }
+
+                    &#after-sales {
+                        order: 4;
+                        -webkit-order: 4;
+                    }
+
+                    &#parts {
+                        order: 5;
+                        -webkit-order: 5;
+                    }
+
+                    &#learning-and-performing {
+                        order: 6;
+                        -webkit-order: 6;
+                    }
+                }
+            }
+        }
+    }
+
+    &--title {
+        text-align: center;
+        position: relative;
+        margin-bottom: $space-4;
+
+        &-text {
+            @include subhead-reg;
+            background: $dusty-gray;
+            color: $white;
+            display: inline-block;
+            padding-left: $space-3;
+            padding-right: $space-3;
+            position: relative;
+            z-index: 2;
+        }
+
+        &:after {
+            background: $white;
+            content: "";
+            height: 1px;
+            left: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            width: 100%;
+            z-index: 1;
+        }
+    }
+
+    &--section {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -$space-3;
+        margin-right: -$space-3;
+        text-align: center;
+
+        &-block {
+            margin-bottom: $space-8;
+            padding-left: $space-3;
+            padding-right: $space-3;
+            width: 100%;
+
+            @include media($tablet) {
+                width: 25%;
+            }
+
+            &.hidden {
+                display: none;
+            }
+        }
+
+        &-date {
+            @include featured-copy-reg;
+            color: $white;
+            margin-top: $space-3;
+        }
+
+        &-feed {
+            @include subsection-reg;
+            color: $white;
+            margin-top: $space-2;
+        }
+
+        &-image {
+            max-width: 100%;
+        }
+    }
+}

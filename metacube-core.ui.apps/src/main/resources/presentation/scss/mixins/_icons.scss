@@ -1,0 +1,13 @@
+@mixin icon($icon, $size: 100%) {
+    content: $icon;
+    font-family: $icomoon-font-family;
+    font-weight: normal;
+    font-size: $size;
+}
+
+// shortcut for creating an icon as a pseudo element
+@mixin pseudo-icon($icon, $position: 'before') {
+    &:#{$position} {
+        @include icon($icon);
+    }
+}

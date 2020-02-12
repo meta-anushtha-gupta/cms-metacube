@@ -1,0 +1,12 @@
+<sly data-sly-use.categoryList="${ '/apps/metacube/components/utils/multifield-json.js' @ mfName='categoryLinks' }" />
+
+<div class="aem-editorial" data-sly-unwrap="${!wcmmode.edit}"  data-sly-test.hasContent="${categoryList.items}">
+	<ul>
+		<sly data-sly-list.categoryListJson="${categoryList.items}">
+			<li class="top-nav__item">
+				<a href="${categoryListJson.linkTarget @ extension='html'}" target="_self"
+			   		class="top-nav__link">${categoryListJson.linkText}</a>
+	   		</li>
+		</sly>
+	</ul>
+</div>

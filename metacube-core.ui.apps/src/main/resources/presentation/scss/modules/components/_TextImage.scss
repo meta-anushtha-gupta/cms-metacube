@@ -1,0 +1,41 @@
+.textImage {
+    &__container {
+        position: relative;
+        text-align: center;
+        color: white;
+        width: 125%;
+        margin-left: -13%;
+    }
+
+    &__top-left {
+        text-align: left;
+        font-family: sans-serif;
+        overflow-y: auto;
+        background-size: contain;
+        width: 100%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    &__top-title {
+        text-align: left;
+        margin-right: 10%;
+        font-family: sans-serif;
+    }
+}
+
+pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    color: white;
+
+    &__div {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #4CAF50;
+    }
+}

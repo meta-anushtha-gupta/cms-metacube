@@ -1,0 +1,481 @@
+$stickynav-item-active-border: border-color 0.15s cubic-bezier(.25,.04,.22,.97);
+$stickynav-item-color-xl: color 0.15s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$stickynav-transition-open-close-s: max-height 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$stickynav-transition-background-color: background-color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+@mixin sticky-nav-expanded() {
+    [data-page-level-sticky-nav-state="expanded"] & {
+        @content
+    }
+}
+
+@mixin sticky-nav-collapsed() {
+    [data-page-level-sticky-nav-state="collapsed"] & {
+        @content
+    }
+}
+
+.sticky-nav {
+    *:focus {
+        animation: none;
+        outline: none;
+    }
+
+    position: relative;
+
+    @include media($large) {
+        margin-bottom: $space*6;
+    }
+
+    &__container {
+        background-color: transparent;
+        transition: $stickynav-transition-background-color;
+        width: 100%;
+        z-index: $z-sticky+1;
+
+        @include media($large) {
+            background-color: $white;
+        }
+
+        &:after {
+            @include media($large) {
+                @include tablet-container-width();
+                content: '';
+                height: 1px;
+                background-color: $silver;
+                display: block;
+                margin: auto;
+                transition: $stickynav-border;
+
+            }
+
+            @include media($xlarge) {
+                width: 940px;
+            }
+        }
+
+        &.sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            &:after {
+                @include media($large) {
+                    width: 100%;
+                    transition: $stickynav-border;
+                }
+            }
+        }
+
+        &.absolute {
+            position: absolute;
+            top: initial;
+            bottom: $space*40;
+        }
+
+        &.borderless {
+            border: none;
+
+            &:after {
+                display: none;
+            }
+        }
+
+        &[data-page-level-sticky-nav-state="collapsed"] {
+            border-bottom: 1px solid $silver;
+            border-top: 1px solid $silver;
+
+            &.sticky {
+                border-top-color: $white;
+                position: fixed;
+            }
+
+            @include media($large) {
+                border: none;
+            }
+        }
+
+        &[data-page-level-sticky-nav-state="expanded"] {
+            background-color: $white;
+            height: 100vh;
+            overflow: scroll;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: $z-sticky+1;
+
+            @include media($large) {
+                height: auto;
+                max-height: 100vh;
+                overflow: auto;
+                position: absolute;
+
+                &.sticky {
+                    position: fixed;
+                }
+
+                &:after {
+                    width: 100%;
+                    transition: $stickynav-border;
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        background-color: $white;
+
+        @include media($mobile-only) {
+            width: 100%;
+        }
+
+        @include media($large) {
+            overflow: hidden;
+        }
+    }
+
+    &__items-list {
+        @include highlight-copy-reg;
+        display: flex;
+        justify-content: space-between;
+
+        @include media($large) {
+            @include copy-narrow-reg;
+            flex-direction: row;
+            align-items: stretch;
+        }
+
+        @include sticky-nav-collapsed() {
+            display: block;
+        }
+
+        @include sticky-nav-expanded() {
+            display: block;
+        }
+    }
+
+    &__item {
+        @include mobile-container-width();
+        margin: 0 auto;
+        text-align: center;
+        transition: $stickynav-item-color-s, $stickynav-transition-open-close-s, $stickynav-transition-border;
+        overflow: hidden;
+
+        @include media($large) {
+            align-items: center;
+            color: $blitz;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
+            transition: $stickynav-item-color-xl, $stickynav-transition-open-close-xl, $stickynav-transition-border;
+            position: relative;
+        }
+
+        @include sticky-nav-collapsed() {
+            max-height: 0;
+            border-bottom: 0 solid transparent;
+
+            @include media($large) {
+                height: 0;
+                max-height: none;
+            }
+        }
+
+        @include sticky-nav-expanded() {
+            @include media($mobile-only) {
+                max-height: 60px;
+                border-bottom: 1px solid $seashell;
+
+                &:first-child {
+                    border-bottom-color: $silver;
+                }
+
+                &:last-child {
+                    &:after {
+                        border-bottom: 1px solid $silver;
+                        content: '';
+                        display: block;
+                        left: 0;
+                        position: absolute;
+                        width: 100%;
+                    }
+                }
+            }
+
+            @include media($large) {
+                border-bottom: 1px solid $silver;
+                height: 45px;
+            }
+
+            &:last-of-type {
+                border-bottom: none;
+
+                &:before {
+                    @include media($large) {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+
+        &:before {
+            @include media($large) {
+                content: '';
+                border-bottom: $space*1-2 solid transparent;
+                bottom: -1px;
+                left: 0;
+                right: auto;
+                top: auto;
+                transform: none;
+                transition: $stickynav-item-active-border;
+                position: absolute;
+                width: 100%;
+            }
+
+            @include sticky-nav-expanded() {
+                @include media($large) {
+                    content: none;
+                }
+            }
+        }
+
+        &:after {
+            @include media($large) {
+                border-right: 1px solid $silver;
+                content: '';
+                height: $space*5+3;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            @include sticky-nav-collapsed() {
+                @include media($large) {
+                    border-right: none;
+                }
+            }
+
+            @include sticky-nav-expanded() {
+                @include media($large) {
+                    border-right: none;
+                }
+            }
+        }
+
+        &:first-child {
+            width: 100%;
+
+            @include media($large) {
+                display: none;
+            }
+
+            @include sticky-nav-collapsed() {
+                @include media($large) {
+                    display: flex;
+                }
+            }
+
+            @include sticky-nav-expanded() {
+                @include media($large) {
+                    display: flex;
+                    @include mobile-container-width();
+                }
+            }
+        }
+
+        &:last-of-type {
+            &:after {
+                @include media($large) {
+                    content: none;
+                }
+            }
+        }
+
+        &--last-visible {
+            &:after {
+                @include media($large) {
+                    content: none;
+                }
+            }
+        }
+
+        &--active {
+            color: $blitz;
+            display: block;
+            max-height: none;
+
+            @include media($large) {
+                display: flex;
+                height: auto;
+                max-height: none;
+            }
+
+            @include sticky-nav-collapsed() {
+                display: block;
+                max-height: none;
+
+                @include media($large) {
+                    display: flex;
+                    height: auto;
+
+                }
+            }
+
+            @include sticky-nav-expanded() {
+                color: $azure-radiance;
+            }
+
+            .sticky & {
+                @include media($large) {
+                    color: $azure-radiance;
+                }
+
+                &:before {
+                    @include media($large) {
+                        border-bottom-color: $azure-radiance;
+                    }
+                }
+            }
+
+            [data-page-level-sticky-nav-state="collapsed"].sticky & {
+                color: $blitz;
+
+                &:before {
+                    @include media($large) {
+                        border-bottom-color: transparent;
+                    }
+                }
+            }
+
+            [data-page-level-sticky-nav-state="expanded"].sticky & {
+                &:before {
+                    @include media($large) {
+                        border-bottom-color: $silver;
+                    }
+                }
+            }
+        }
+    }
+
+    &__item-link {
+        color: currentColor;
+        display: inline-block;
+        line-height: $space*3;
+        padding: $space*2+2 0;
+        position: relative;
+        width: 100%;
+
+        @include media($large) {
+            display: block;
+            padding: $space-4 $space-2;
+            transition: $stickynav-item-color-xl;
+        }
+
+        @include sticky-nav-collapsed() {
+
+            @include media($large) {
+                padding: $space*3 $space*6;
+            }
+        }
+
+        @include sticky-nav-expanded() {
+
+            @include media($large) {
+                padding: $space*3 $space*6;
+            }
+        }
+
+        &:hover, &:focus {
+            animation: none;
+            color: $azure-radiance;
+        }
+
+        &-label {
+            display: inline-block;
+            padding: 0 $space*4;
+            position: relative;
+
+            @include media($large) {
+                padding: 0;
+                display: block;
+                word-break: break-word;
+            }
+        }
+
+        .sticky-nav__item--active & {
+            &-label {
+                &:after {
+                    @include sticky-nav-collapsed() {
+                        @include icon($icon-caret-down-thin);
+                        color: $denim;
+                        display: inline-block;
+                        margin-left: $space*2;
+                    }
+
+                    @include sticky-nav-expanded() {
+                        content: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &__item-skip-to {
+        color: $azure-radiance;
+        display: inline-block;
+        font-size: 100%;
+        line-height: $space*3;
+        padding: $space*2+2 $space*4;
+        position: relative;
+
+        &:after {
+            @include icon($icon-caret-up-thin);
+            color: $azure-radiance;
+            display: inline-block;
+            margin-left: $space*2;
+        }
+
+        @include media($large) {
+            display: none;
+        }
+
+        @include sticky-nav-collapsed() {
+            @include media($large) {
+                display: inline-block;
+            }
+        }
+
+        @include sticky-nav-expanded() {
+            @include media($large) {
+                display: inline-block;
+                padding: $space*3 $space*6;
+            }
+        }
+    }
+
+    &__nav-toggle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+
+        @include media($large) {
+            cursor: pointer;
+        }
+
+        @include sticky-nav-collapsed() {
+            height: 100%;
+        }
+
+        @include sticky-nav-expanded() {
+            height: $space-8;
+
+            @include media($large) {
+                height: $space*9;
+            }
+        }
+    }
+}

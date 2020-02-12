@@ -1,0 +1,50 @@
+.section {
+    margin: 0px $space-4;
+
+    &__heading {
+        color: $scorpion;
+        font-size: $space-4;
+    }
+
+    &__content {
+        &-container {
+            color: $scorpion;
+        }
+
+        &-description {
+            line-height: 1.6;
+            margin-bottom: $space-2;
+        }
+
+        &-list {
+            list-style: none;
+        }
+
+        &-listitem {
+            border-top: 1px solid $alto;
+            padding: $space-2;
+
+            &:hover {
+                color: $white;
+                background-color: $denim;
+            }
+        }
+
+        &-anchor {
+            &:visited {
+                color: $scorpion;
+            }
+        }
+
+        &-listicon {
+            color: $denim;
+            margin-left: $space-4;
+        }
+
+        &-rightarrow {
+            float: right;
+            margin-right: $space-4;
+            margin-top: $space;
+        }
+    }
+}

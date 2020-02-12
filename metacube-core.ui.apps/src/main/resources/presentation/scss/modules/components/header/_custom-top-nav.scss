@@ -1,0 +1,646 @@
+body[data-submenu-state="open"] {
+    .custom-top-nav__link_parent {
+        &[data-open="true"] {
+            & + .custom-top-nav__sub-menu-list {
+                display: block;
+            }
+        }
+
+        &[data-open="false"] {
+            & + .custom-top-nav__sub-menu-list {
+                display: none;
+            }
+        }
+    }
+}
+
+.custom-websites {
+    &[data-menu-state="open"] {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+
+        .page-content {
+            left: 250px;
+            z-index: $z-subnav;
+        }
+
+        .header {
+            left: 250px;
+        }
+
+        footer {
+            left: 250px;
+            z-index: -1;
+        }
+
+        .header-click-blocker {
+            visibility: visible;
+            left: 250px;
+        }
+    }
+}
+
+.custom-top-nav {
+    &__item {
+        display: block;
+
+        @include media($desktop) {
+            margin: 0px $space-2;
+            display: table-cell;
+            vertical-align: bottom;
+        }
+
+        &--company-title {
+            display: none;
+
+            @include media($desktop) {
+                display: table-cell;
+                width: 168px;
+                margin: 0px $space-2;
+            }
+
+            .custom-top-nav__link {
+                display: block;
+                margin: $space-2 $space-2 $space-2 0px;
+                padding: 0;
+
+                @include media($mobile-only) {
+                    text-align: center;
+                }
+            }
+        }
+
+        &--heading {
+            font-size: $space-5+1;
+            color: $white;
+        }
+
+        &--menu {
+            @include media($mobile-only) {
+                position: inherit;
+                display: block;
+            }
+
+            @include media($desktop) {
+                display: inline-block;
+                margin: 0;
+                text-align: center;
+                position: relative;
+            }
+
+            &:before, &:after {
+                content: "";
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 1px;
+
+                @include media($mobile-only) {
+                    content: none;
+                }
+            }
+
+            &:after {
+                left: 101%;
+            }
+        }
+
+        .custom-top-nav__link {
+            color: $boulder;
+            padding: $space-4 $space-5 0px 0px;
+
+            &:hover {
+                color: $dark-gray;
+            }
+
+            @include media($desktop) {
+                color: $white;
+                padding: 0px;
+
+                &--disabled {
+                    &:hover {
+                        cursor: not-allowed;
+                        color: $very-light-grey;
+                    }
+                }
+            }
+
+            &--disabled {
+                color: $very-light-grey;
+
+                &:focus {
+                    color: $very-light-grey;
+                }
+
+                &:hover {
+                    color: $very-light-grey;
+                }
+            }
+
+            &_parent {
+                color: $boulder;
+                position: relative;
+                padding-right: $space-3;
+
+                @include media($desktop) {
+                    color: $white;
+                }
+
+                &:after {
+                    @include icon($icon-caret-down);
+                    font-size: 8px;
+                    transition: all 0.5s ease 0s;
+                    position: relative;
+                    margin-left: 5px;
+                    position: absolute;
+                    bottom: 4px;
+
+                    @include media($desktop) {
+                        line-height: 0;
+                        bottom: $space-2;
+                        bottom: 8px;
+                        right: 0
+                    }
+
+                    @include media($large-desktop) {
+                        bottom: $space-2;
+                        right: 0;
+                    }
+                }
+
+                &[data-open="true"]:after {
+                    transform: rotate(180deg);
+                    transform-origin: center center;
+                }
+
+                &[data-open="false"]:after {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+
+        .logo__container {
+            .sprinter__logo {
+                width: 240px;
+            }
+        }
+    }
+
+    &__menu-list {
+        display: inline-block;
+        width: 100%;
+
+        @include media($desktop) {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        &__container {
+            display: table-cell;
+            vertical-align: bottom;
+        }
+    }
+
+    &__sub-menu-list {
+        display: none;
+
+        @include media($desktop) {
+            top: 100%;
+            white-space: nowrap;
+            display: none;
+            min-width: 190px;
+            background: $black;
+            border-radius: $space;
+            text-align: left;
+            max-height: none;
+            z-index: 1000;
+            left: -$space-2;
+            position: absolute;
+        }
+
+        @include media($large-desktop) {
+            top: 100%;
+        }
+
+        &__item {
+            margin-top: $space-4;
+            margin-left: $space-3;
+
+            @include media($desktop) {
+                display: block;
+                margin-top: 0px;
+                margin-left: 0px;
+
+            }
+
+        }
+
+        &__link {
+            color: $boulder;
+            font-size: 14px;
+
+            @include media($desktop) {
+                color: $white;
+                display: block;
+                padding: 3px $space-2;
+                font-size: 11px;
+
+                &:first-child {
+                    padding-top: $space+1;
+                }
+            }
+
+            @include media($large-desktop) {
+                font-size: 12px;
+            }
+
+            &:hover {
+                color: $cerulean;
+            }
+        }
+    }
+
+    &__link {
+        @include featured-copy-reg;
+        display: block;
+
+        @include media($desktop) {
+            font-size: 12px;
+            display: inline-block;
+        }
+
+        @include media($large-desktop) {
+            font-size: 14px;
+        }
+
+        &_back-btn {
+            display: none;
+        }
+    }
+
+    &__level {
+        position: relative;
+
+        @include media($desktop) {
+            display: block;
+        }
+    }
+
+    &__container {
+        width: 250px;
+        position: fixed;
+        overflow: hidden;
+        height: 100vh;
+        background-color: #f8f8f8;
+        top: 0;
+        transition: 0.5s;
+        left: -250px;
+        overflow-y: scroll;
+
+        @include open-nav() {
+            left: 0;
+        }
+
+        @include media($desktop) {
+            background: transparent;
+            height: auto;
+            position: static;
+            width: auto;
+            overflow: inherit;
+        }
+    }
+
+    &__sub-nav {
+        max-height: 0;
+
+        ul {
+            background: $black;
+            display: none;
+        }
+    }
+
+    .wrapper {
+        max-width: 1170px;
+    }
+
+    .error-field {
+        &--hidden {
+            visibility: hidden;
+        }
+
+        &--zip-code {
+            color: $guardsman-red;
+        }
+    }
+
+    .hide-container {
+        display: none;
+    }
+}
+
+.custom-sub-nav__level {
+    width: 100%;
+    margin-top: $space-2;
+
+    @include media($tablet) {
+        @include span-columns(12);
+        margin-right: 0px;
+    }
+
+    &--left {
+        display: inline-block;
+        margin: $space-13 0px 0px 0px;
+        bottom: $space-2;
+        @include span-columns(12);
+
+        @include media($desktop) {
+            margin: $space-3 0px;
+            @include span-columns(9);
+            display: table;
+        }
+    }
+
+    &--right {
+        position: absolute;
+        top: 0%;
+        @include span-columns(12);
+        margin-top: $space;
+
+        @include media($desktop) {
+            @include span-columns(3);
+            position: inherit;
+            margin-top: $space+2;
+        }
+    }
+}
+
+.custom-sub-nav {
+    &__search {
+        text-align: left;
+        display: block;
+        width: 100%;
+        margin-right: $space+2;
+
+        @include media($desktop) {
+            width: 75%;
+            display: inline-block;
+        }
+
+        @include media($large-desktop) {
+            display: inline-block;
+            margin-right: $space-2;
+        }
+    }
+
+    &__title-block {
+        margin: $space-2 $space $space 0px;
+        font-family: $secondary-font-family;
+        font-size: 26px;
+    }
+
+    &__form-title {
+        color: $black;
+
+        @include media($desktop) {
+            color: $white;
+            font-weight: $font-weight-bold;
+            font-size: 11px;
+        }
+
+        @include media($large-desktop) {
+            font-size: 12px;
+        }
+    }
+
+    &__form {
+        margin-bottom: $space-2;
+        display: inline-block;
+
+        @include media($desktop) {
+            margin-bottom: 0px;
+        }
+
+        &-input {
+            width: 100%;
+            height: 28px;
+            font-size: 12px;
+            padding-left: 3px;
+
+            @include media($desktop) {
+                height: $space-5;
+                display: inline-block;
+            }
+
+            &__container {
+                width: 60%;
+                display: inline-block;
+                float: left;
+
+                @include media($desktop) {
+                    width: 75%;
+                }
+            }
+        }
+
+        &-btn {
+            min-width: $space*13;
+            height: $space-5+3;
+            margin-left: $space-2;
+            background-color: $denim;
+            color: $white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            vertical-align: top;
+
+            @include media($desktop) {
+                display: inline-block;
+                padding: 2px 0px;
+                width: 25%;
+                height: auto;
+                min-width: 0px;
+                margin: 0px;
+            }
+
+            &:hover {
+                background-color: $dodger-blue;
+            }
+        }
+
+        &__title-block {
+            color: $white;
+        }
+    }
+
+    &__logout {
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        font-weight: $font-weight-bold;
+        color: $black;
+        font-size: 13px;
+        margin-top: $space-4;
+
+        @include media($desktop) {
+            color: $white;
+            margin-top: 0px;
+        }
+
+        @include media($large-desktop) {
+            font-size: 14px;
+        }
+
+        &--small-screen {
+            @include media($desktop) {
+                display: none;
+            }
+        }
+
+        &--large-screen {
+            display: none;
+
+            @include media($desktop) {
+                display: inline-block;
+            }
+        }
+
+        &--icon {
+            display: none;
+
+            &:before {
+                font-family: 'micro-icons';
+                content: $icon-logout;
+            }
+
+            @include media($desktop) {
+                display: block;
+            }
+        }
+    }
+}
+
+.custom-top-nav__level {
+    &--active {
+        overflow: scroll;
+        padding-bottom: 50%;
+    }
+
+    &--open {
+        transform: none;
+        visibility: visible;
+        z-index: 0;
+    }
+
+    &--full-width {
+        .custom-sub-nav__level--left {
+            margin: $space 0px 0px 0px;
+            width: 100%;
+            @include media($desktop) {
+                margin: $space-3+3 0px;
+            }
+        }
+    }
+
+    &--search-only {
+        .custom-sub-nav {
+            &__level {
+                &--left {
+                    margin: $space-14 0px 0px 0px;
+                    @include media($desktop) {
+                        @include span-columns(10);
+                        margin: $space-3 0px;
+                        display: table;
+                    }
+                }
+
+                &--right {
+                    @include media($desktop) {
+                        @include span-columns(2);
+                    }
+                }
+            }
+
+            &__search {
+                width: 100%;
+            }
+        }
+    }
+
+    &--logout-only {
+        .custom-sub-nav__level {
+            &--left {
+                margin: $space-5 0px 0px 0px;
+                @include media($desktop) {
+                    @include span-columns(11);
+                    margin: $space-3 0px;
+                    display: table;
+                }
+            }
+
+            &--right {
+                @include media($desktop) {
+                    margin-top: $space+2;
+                    @include span-columns(1);
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+.custom-websites {
+    .header-click-blocker {
+        visibility: hidden;
+        width: 100%;
+        position: fixed;
+        top: 40px;
+        left: 0;
+        background-color: $black;
+        height: 100vh;
+        opacity: 0.4;
+        transition: 0.5s;
+    }
+
+    .page-content {
+        left: 0;
+        z-index: 500;
+        position: relative;
+        transition: 0.5s;
+
+        &.un-transform {
+            transform: none;
+        }
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        z-index: 0;
+        left: 0;
+        transition: 0.5s;
+    }
+
+    .header {
+        position: relative;
+        z-index: 501;
+        left: 0;
+        transition: 0.5s;
+
+        &--position {
+            z-index: 500;
+        }
+    }
+
+    .breadcrumb, .hero-image {
+        display: none;
+
+        @include media($desktop) {
+            display: block;
+        }
+    }
+
+}

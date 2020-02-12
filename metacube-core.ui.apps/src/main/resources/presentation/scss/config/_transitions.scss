@@ -1,0 +1,13 @@
+//http://cubic-bezier.com/#.25,.04,.22,.97
+$menu-transition-open: transform 0.4s cubic-bezier(.25,.04,.22,.97);
+$menu-transition-close: transform 0.3s cubic-bezier(.19,.15,.36,.95);
+$subnav-transition: margin-bottom 0.4s cubic-bezier(.25,.04,.22,.97);
+$submenu-transition-open: max-height 0.4s cubic-bezier(.25,.04,.22,.97);
+$carousel-transition-open: margin-left 0.4s cubic-bezier(.25,.04,.22,.97);
+$carousel-transition-arrows: opacity 0.4s 0.2s cubic-bezier(.25,.04,.22,.97);
+$stickynav-fade: opacity 0.4s cubic-bezier(.25,.04,.22,.97);
+$stickynav-border: width 1.0s cubic-bezier(.25,.04,.22,.97);
+$button-loading-transition-open: padding $speed-4 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$stickynav-item-color-s: color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$stickynav-transition-open-close-xl: height 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$stickynav-transition-border: border 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);

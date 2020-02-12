@@ -1,0 +1,39 @@
+.image-text {
+    &__block {
+        background: $athens-gray;
+        border: 1px solid $mischka;
+        border-radius: $space;
+        margin-bottom: $space-4;
+        padding: $space-2 $space-3;
+    }
+
+    &__left {
+        float: left;
+        margin-right: $space-2;
+
+        &--img {
+            background: $white;
+            border: 1px solid $alto;
+            padding: 4px;
+        }
+    }
+
+    &__right {
+        overflow: hidden;
+    }
+
+    &__heading {
+        @include subsection-reg;
+        margin-bottom: $space;
+    }
+
+    &__para {
+        margin-bottom: $space-2;
+    }
+
+    &__link {
+        font-weight: bold;
+        font-size: 14px;
+        display: block;
+    }
+}

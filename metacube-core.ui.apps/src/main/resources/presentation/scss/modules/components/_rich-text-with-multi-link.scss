@@ -1,0 +1,72 @@
+.rich-text-with-multi-link {
+    &__container {
+        font-size: 0;
+    }
+
+    &__title {
+        @include featured-heading;
+        font-size: 34px;
+        margin-bottom: $space-2;
+    }
+
+    &__para {
+        @include featured-copy-reg;
+        margin-bottom: $space-2;
+    }
+
+    &__rich-text-container {
+        @include span-columns(12);
+        @include media($tablet) {
+            @include span-columns(6);
+            display: inline-block;
+            float: none;
+            vertical-align: top;
+        }
+    }
+
+    &__multi-link {
+        &-container {
+            @include span-columns(12);
+            @include media($tablet) {
+                @include span-columns(6);
+                display: inline-block;
+                float: none;
+                vertical-align: top;
+            }
+        }
+
+        &-items {
+            margin-bottom: $space-4;
+        }
+    }
+
+    &__button {
+        min-width: 100px;
+        text-align: center;
+    }
+
+    &__download {
+        &-link {
+            margin-left: $space;
+            font-size: 14px;
+            display: inline-block;
+
+            .icon-pdf {
+                color: $guardsman-red;
+            }
+        }
+
+        &-text {
+            color: $denim;
+
+            &:hover {
+                color: $bay-of-many;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &--full-width {
+        @include span-columns(12);
+    }
+}

@@ -1,0 +1,65 @@
+@import "../config/colors";
+
+@include generateFontFace($secondary-font-name, $secondary-fonts, $secondary-font-weights, normal, $secondary-font-formats);
+@include generateFontFace($secondary-font-name, $secondary-fonts-italic, $secondary-font-weights-italic, italic, $secondary-font-formats);
+@include generateFontFace($tertiary-font-name, $tertiary-fonts, $tertiary-font-weights, normal, $tertiary-font-formats);
+@include generateFontFace($tertiary-font-name, $tertiary-fonts-italic, $tertiary-font-weights-italic, italic, $tertiary-font-formats);
+
+*:focus {
+    outline: none;
+}
+
+body {
+    font-family: $default-font-family;
+    font-weight: $font-weight-regular;
+    font-size: 12px;
+    line-height: (22/12);
+    color: $scorpion;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+h1, h2, h3, h4, h5, h6, a, span {
+    &:before,
+    &:after {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    }
+}
+
+code {
+    display: block;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    padding: 10px;
+    font-family: "Lucida Console", Monaco, monospace;
+    background: $seashell;
+    color: $black;
+    margin: 16px 0;
+}
+
+code.inline {
+    white-space: normal;
+    display: inline;
+    padding: 1px 5px;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+i, em {
+    font-style: italic;
+}
+
+strong, b {
+    font-weight: bold;
+}
+
+sup {
+    vertical-align: super;
+    font-size: 11px;
+}

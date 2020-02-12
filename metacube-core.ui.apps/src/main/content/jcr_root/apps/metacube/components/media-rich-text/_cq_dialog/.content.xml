@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Media &amp; Rich Text"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    mode="edit">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <content
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Content"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Limit to 72 characters, including spaces"
+                                fieldLabel="Heading"
+                                name="./heading"
+                                required="{Boolean}false"/>
+                            <subheading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldDescription="Limit to 450 characters, including spaces"
+                                fieldLabel="SubHeading"
+                                name="./subHeading"
+                                required="{Boolean}false"/>
+                            <body-rte
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/include"
+                                path="/apps/metacube/components/widgets/rte-standard/rte-config"/>
+                            <ctaText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Limit to 15 characters, including spaces"
+                                fieldLabel="CTA Text"
+                                name="./ctaText"
+                                required="{Boolean}false"/>
+                            <style
+		                        jcr:primaryType="nt:unstructured"
+		                        sling:resourceType="granite/ui/components/foundation/include"
+		                        path="/apps/metacube/components/widgets/ctaLinkStyle/ctaStyle"/>
+                            <ctaLinkUrl
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Link URL"
+                                name="./ctaLinkUrl"
+                                required="{Boolean}false"
+                                rootPath="/content"/>
+                            <findText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Limit to 15 characters, including spaces"
+                                fieldLabel="Find Text"
+                                name="./findText"
+                                required="{Boolean}false"/>
+                            <findLinkUrl
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Find Link URL"
+                                name="./findLinkUrl"
+                                required="{Boolean}false"
+                                rootPath="/content"/>
+                            <downloadText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Limit to 15 characters, including spaces"
+                                fieldLabel="Download Text"
+                                name="./downloadText"
+                                required="{Boolean}false"/>
+                            <downloadUrl
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Download URL"
+                                name="./downloadUrl"
+                                required="{Boolean}false"
+                                rootPath="/content"/>
+                        </items>
+                    </column>
+                </items>
+            </content>
+            <video
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Video"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <html5video
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="HTML 5 Video"
+                                name="./html5video"
+                                required="{Boolean}false"
+                                rootPath="/content/dam/metacube"/>
+                            <youtube
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Enter the YouTube video's ID. E.g.: XFJWF_qAZ3Q"
+                                fieldLabel="YouTube Video"
+                                name="./youtube"
+                                required="{Boolean}false"/>
+                            <vimeo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Enter the Vimeo video's ID. E.g.: 272277595"
+                                fieldLabel="Vimeo Video"
+                                name="./vimeo"
+                                required="{Boolean}false"/>
+                        </items>
+                    </column>
+                </items>
+            </video>
+            <image
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Image"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <imageTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Limit to 72 characters, including spaces"
+                                fieldLabel="Image title"
+                                name="./imageTitle"
+                                required="{Boolean}false"/>
+                            <imageSubTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Limit to 72 characters, including spaces"
+                                fieldLabel="Image sub title"
+                                name="./imageSubTitle"
+                                required="{Boolean}false"/>
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                fieldLabel="Image">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                    acs-commons-nested="JSON_STORE"
+                                    name="./image">
+                                    <layout
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                        method="absolute"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <image
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    fieldLabel="Image"
+                                                    name="./imagePath"
+                                                    required="{Boolean}false"
+                                                    rootPath="/content"/>
+                                                <imageAlt
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Image Alt Text"
+                                                    name="./imageAlt"
+                                                    required="{Boolean}false"/>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </image>
+                            <ctaText
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="CTA Text"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <linkText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldDescription="Limit to 15 characters, including spaces"
+                                        fieldLabel="Link Text"
+                                        name="./imageLinkText"
+                                        required="{Boolean}false"/>
+                                    <linkDestination
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldLabel="Link Destination"
+                                        name="./imageLinkPath"
+                                        required="{Boolean}false"
+                                        rootPath="/content"/>
+                                </items>
+                            </ctaText>
+                        </items>
+                    </column>
+                </items>
+            </image>
+            <options
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Options"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <badgeText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Limit to 72 characters, including spaces"
+                                fieldLabel="Badge Text"
+                                name="./badgeText"
+                                required="{Boolean}false"/>
+                            <mediaTextVerticalAlignment
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Media Text Block Vertical Alignment"
+                                name="./mediaTextVerticalAlignment"
+                                required="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                	<top
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Top"
+                                        value="top"/>
+                                    <bottom
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Bottom"
+                                        value="bottom"/>
+                                    <middle
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="{Boolean}true"
+                                        text="Middle"
+                                        value="middle"/>
+                                </items>
+                            </mediaTextVerticalAlignment>
+                            <textBlock
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Text Block Alignment"
+                                name="./textBlock"
+                                required="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                	<top
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Top"
+                                        value="top"/>
+                                    <bottom
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Bottom"
+                                        value="bottom"/>
+                                    <left
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Left"
+                                        value="left"/>
+                                    <right
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="{Boolean}true"
+                                        text="Right"
+                                        value="right"/>
+                                </items>
+                            </textBlock>
+                            <contentAlignment
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Content Alignment"
+                                name="./contentAlignment"
+                                required="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                	<left
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="{Boolean}true"
+                                        text="Left"
+                                        value="content-alignment--left"/>
+                                    <center
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Center"
+                                        value="content-alignment--center"/>
+                                    <right
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Right"
+                                        value="content-alignment--right"/>
+                                </items>
+                            </contentAlignment>
+                            <separator
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Separator Position"
+                                name="./separator"
+                                required="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <pleaseSelect
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Please Select"
+                                        value=""/>
+                                	<top
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Top"
+                                        value="separator-top"/>
+                                    <bottom
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Bottom"
+                                        value="separator-bottom"/>
+                                    <both
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Both"
+                                        value="separator-both"/>
+                                </items>
+                            </separator>
+                            <headingFontSize
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Heading Font Size"
+                                name="./headingFontSize"
+                                required="{Boolean}false">
+                                <datasource
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                    path="/etc/acs-commons/lists/metacube-font-size-type"/>
+                            </headingFontSize>
+                            <subheadingFontSize
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Subheading Font Size"
+                                name="./subheadingFontSize"
+                                required="{Boolean}false">
+                                <datasource
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                    path="/etc/acs-commons/lists/metacube-font-size-type"/>
+                            </subheadingFontSize>
+                            <descriptionFontSize
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Description Font Size"
+                                name="./descriptionFontSize"
+                                required="{Boolean}false">
+                                <datasource
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                    path="/etc/acs-commons/lists/metacube-font-size-type"/>
+                            </descriptionFontSize>
+                            <ctaAlignment
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="CTA Button Alignment"
+                                name="./ctaAlignment"
+                                required="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                	 <left
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="{Boolean}true"
+                                        text="Left"
+                                        value="left"/>
+                                    <right
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Right"
+                                        value="right"/>
+                                    <center
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Center"
+                                        value="center"/>
+                                </items>
+                            </ctaAlignment>
+                            <imageThumbnail
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".button-option-enable-showhide-target"
+                                fieldDescription="Image Thumbnail"
+                                name="./imageThumbnail"
+                                text="Image Thumbnail"
+                                value="true"/>
+                            <imageBorder
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Add Border to Image"
+                                name="./imageBorder"
+                                text="Add Image Border"
+                                value="true"/>
+                            <imageCarousel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Add Image Carousel"
+                                name="./imageCarousel"
+                                text="Add Image Carousel"
+                                value="true"/>
+                        </items>
+                    </column>
+                </items>
+            </options>
+        </items>
+    </content>
+</jcr:root>

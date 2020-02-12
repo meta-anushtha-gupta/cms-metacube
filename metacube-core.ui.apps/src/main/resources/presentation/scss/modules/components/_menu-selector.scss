@@ -1,0 +1,90 @@
+.menu-selector {
+    @include dropdown-sub-link;
+    margin-bottom: $space-4;
+    position: relative;
+
+    &__selected-item {
+        color: $azure-radiance;
+        border-bottom: 4px solid $azure-radiance;
+        line-height: (18/14);
+        padding-bottom: $space-2;
+        text-align: center;
+        width: 100%;
+
+        &:after {
+            @include icon($icon-arrow-down-square);
+            padding-left: $space-2;
+            vertical-align: middle;
+        }
+
+        @include media($large) {
+            display: none;
+        }
+
+        .menu-selector--open &:after {
+            @include icon($icon-arrow-up-square);
+        }
+    }
+
+    &__item-list {
+        border: 1px solid $silver;
+        display: none;
+        position: absolute;
+        width: 100%;
+        z-index: $z-content + 3;
+        top: calc(100% + #{$space});
+
+        @include media($large) {
+            border: none;
+            border-bottom: 1px solid $silver;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            padding: 0 10%;
+        }
+
+        .menu-selector--open & {
+            background-color: $white;
+            display: block;
+        }
+    }
+
+    &__item {
+        @include copy-wide-reg;
+        color: $blitz;
+        cursor: pointer;
+        display: block;
+        line-height: 1;
+        padding: $space-4 $space-4 $space-2 ;
+
+        @include media($large) {
+            @include featured-copy-reg;
+            color: $dusty-gray;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+
+        &--selected {
+            background-color: $white-sand;
+            color: $azure-radiance;
+            font-weight: bold;
+
+            @include media($large) {
+                background-color: transparent;
+                border-bottom: 3px solid $azure-radiance;
+                font-weight: normal;
+            }
+        }
+    }
+
+    &__item-link {
+        color: inherit;
+        font: inherit;
+
+        &:hover {
+            color: $azure-radiance;
+            cursor: pointer;
+        }
+    }
+}

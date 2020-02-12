@@ -1,0 +1,29 @@
+@mixin omega-reset($nth, $context: null) {
+    @if $context==null {
+        &:nth-child(#{$nth}) {
+            margin-right: flex-gutter();
+        }
+    }
+    @else {
+        &:nth-child(#{$nth}) {
+            margin-right: flex-gutter($context);
+        }
+    }
+
+    &:nth-child(#{$nth}+1) {
+        clear: none;
+    }
+}
+
+@mixin mobile-container-width() {
+    width: calc(299/320 * 100%);
+}
+
+@mixin tablet-container-width() {
+    width: calc(700/768 * 100%);
+    margin: 0 auto;
+}
+
+@mixin desktop-container-width() {
+    width: calc(940/980 * 100%);
+}

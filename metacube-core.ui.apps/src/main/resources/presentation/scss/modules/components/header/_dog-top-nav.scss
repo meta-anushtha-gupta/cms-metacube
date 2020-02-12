@@ -1,0 +1,85 @@
+body[data-submenu-state="open"] {
+    .dog-top-nav {
+        .custom-top-nav {
+            &__container {
+                &:after {
+                    @include media($desktop) {
+                        height: 272px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dog-top-nav {
+    .custom-top-nav {
+        &__item {
+            &--menu {
+                @include media($desktop) {
+                    position: static;
+                }
+            }
+        }
+
+        &__sub-menu-list {
+            @include media($desktop) {
+                background: $alto;
+                left: 0;
+                width: 100%;
+                margin: $space-6;
+                max-width: 940px;
+                left: 50%;
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+            }
+
+            &__item {
+                @include media($desktop) {
+                    display: block;
+                    margin-top: 0px;
+                    margin-left: 0px;
+                    margin-bottom: $space-4;
+                    @include span-columns(2.4);
+                    @include omega(5n);
+                }
+            }
+
+            &__link {
+                @include media($desktop) {
+                    color: $black;
+                    display: inline-block;
+                    font-weight: bold;
+                    padding: 3px $space-2;
+                    vertical-align: middle;
+                }
+            }
+
+            &__img {
+                display: none;
+
+                @include media($desktop) {
+                    display: inline-block;
+                    vertical-align: middle;
+                    max-width: 40px;
+                    max-height: 40px;
+                }
+            }
+        }
+
+        &__container {
+            &:after {
+                display: none;
+
+                @include media($desktop) {
+                    background: $alto;
+                    content: ' ';
+                    display: block;
+                    height: 0;
+                    position: absolute;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

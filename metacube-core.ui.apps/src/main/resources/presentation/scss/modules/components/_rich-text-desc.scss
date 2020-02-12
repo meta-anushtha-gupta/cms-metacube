@@ -1,0 +1,163 @@
+.rich-text-desc {
+    margin-bottom: 20px;
+    font-size: 14px;
+
+    &__container {
+        @include media($mobile-only) {
+            margin: 0% !important;
+        }
+    }
+
+    &__description {
+        &-container {
+            overflow: auto;
+            font-family: $helvetica-font-family;
+
+            @include media($desktop) {
+                overflow: visible;
+            }
+
+            ul {
+                list-style: disc;
+                padding-left: $space-4;
+                margin: $space-3 0;
+            }
+
+            li {
+                line-height: $space-4;
+                list-style-position: outside;
+                margin-bottom: $space-2;
+
+                ul {
+                    list-style-type: circle;
+                }
+            }
+
+            ol {
+                list-style: decimal;
+                padding-left: $space-4;
+                margin: 14px 0;
+
+                ol {
+                    list-style-type: lower-alpha;
+
+                    ol {
+                        list-style-type: lower-roman;
+                    }
+                }
+            }
+
+            p {
+                font-weight: 500;
+                margin-bottom: $space-2;
+                line-height: $space-4;
+            }
+
+            a {
+                color: $boston-blue;
+
+                &:hover {
+                    color: $pacific-blue;
+                }
+            }
+
+            h1 {
+                display: block;
+                font-size: 2em;
+                margin-top: 0.67em;
+                margin-bottom: 0.67em;
+                margin-left: 0;
+                margin-right: 0;
+                font-weight: bold;
+            }
+
+            h2 {
+                display: block;
+                font-size: 1.5em;
+                margin-top: 0.83em;
+                margin-bottom: 0.83em;
+                margin-left: 0;
+                margin-right: 0;
+                font-weight: bold;
+            }
+
+            h3 {
+                display: block;
+                font-size: 1.17em;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                margin-left: 0;
+                margin-right: 0;
+                font-weight: bold;
+            }
+
+            h4 {
+                display: block;
+                margin-top: 1.33em;
+                margin-bottom: 1.33em;
+                margin-left: 0;
+                margin-right: 0;
+                font-weight: bold;
+            }
+
+            h5 {
+                display: block;
+                font-size: .83em;
+                margin-top: 1.67em;
+                margin-bottom: 1.67em;
+                margin-left: 0;
+                margin-right: 0;
+                font-weight: bold;
+            }
+
+            h6 {
+                display: block;
+                font-size: .67em;
+                margin-top: 2.33em;
+                margin-bottom: 2.33em;
+                margin-left: 0;
+                margin-right: 0;
+                font-weight: bold;
+            }
+
+            table {
+                width: 100%;
+
+                tr:first-child {
+                    background-color: $silver-light;
+                }
+
+                th {
+                    background-color: $silver-light;
+                }
+
+                td {
+                    border-collapse: collapse;
+                    padding: $space;
+                }
+
+                &[border="0"] {
+                    td {
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &__title {
+        @include subsection-reg;
+        font-size: 24px;
+        font-family: $secondary-font-family;
+        font-weight: 500;
+        margin-bottom: $space-4;
+    }
+
+    &__subTitle {
+        @include featured-copy-bold;
+    }
+
+    &__para {
+        display: block;
+    }
+}

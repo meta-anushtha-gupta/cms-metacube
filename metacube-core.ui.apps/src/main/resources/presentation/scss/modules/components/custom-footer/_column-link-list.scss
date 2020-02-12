@@ -1,0 +1,45 @@
+.column-link-list {
+    margin-bottom: $space-3;
+
+    &__column {
+        display: block;
+    }
+
+    &__column-heading {
+        color: $mine-shaft;
+        padding-bottom: $space-2;
+        margin-bottom: $space-4;
+        font-size: 26px;
+
+        &--blank {
+            padding: $space-4;
+        }
+    }
+
+    &__link-container {
+        color: $black;
+        display: flow-root;
+        margin-left: $space-8;
+        text-align: left;
+
+        @include media($tablet) {
+            margin-left: 0px;
+        }
+
+        li {
+            @include copy-wide-bold;
+        }
+
+        a {
+            display: block;
+            padding-bottom: $space-2;
+            color: $blitz;
+
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+                color: $blitz;
+            }
+        }
+    }
+}

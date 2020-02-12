@@ -1,0 +1,33 @@
+body {
+    &.debug {
+        &:before {
+            display: block;
+        }
+    }
+
+    &:before {
+        display: none;
+        width: calc(299 / 320 * 100%);
+        margin: 0 auto;
+        @include media($tablet) {
+            width: calc(700 / 768 * 100%);
+        }
+        @include media($desktop) {
+            width: calc(940 / 980 * 100%);
+            max-width: 940px;
+        }
+    }
+}
+
+.grid-debugger {
+    @extend body;
+
+    &.debug {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+}

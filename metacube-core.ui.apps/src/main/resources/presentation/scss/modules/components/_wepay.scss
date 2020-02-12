@@ -1,0 +1,40 @@
+.wepay {
+    &-signup {
+        text-align: center;
+
+        a {
+            &.wepay {
+                &-widget {
+                    &-button {
+                        padding: $space-2 $space-5 $space-2;
+
+                        &.wepay-green {
+                            background-color: $denim;
+                            background-image: none;
+                            border: 1px solid $denim;
+                            text-shadow: 0 -1px 0 $denim;
+                            border: 1px solid $denim;
+                            box-shadow: none;
+
+                            &:hover {
+                                background-color: $azure-radiance;
+                                background-image: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-info {
+        @include featured-copy-reg;
+        color: $guardsman-red;
+        font-style: italic;
+        padding: $space-2 0;
+
+        &--bold {
+            font-weight: $font-weight-bold;
+        }
+    }
+}

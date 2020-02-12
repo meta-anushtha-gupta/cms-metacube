@@ -1,0 +1,56 @@
+<sly data-sly-use.html="${ '/apps/metacube/components/utils/templates/html.html' }"
+     data-sly-use.imageFull="${ '/apps/metacube/components/utils/image.js' @ imagePath='heroImage' }"
+     data-sly-use.imageSmall="${ '/apps/metacube/components/utils/image.js' @ imagePath='heroImageSmall' }" />
+
+<sly data-sly-test.hasContent="${imageFull.hasContent || properties.heading}">
+    <div class="fixed-hero fluid-hero fixed-hero__background--${properties.carouselBorderColor} ${imageSmall.path ? 'fixed-hero__mobile-image' : ''}" data-video-id="${properties.youtube}" data-interval="${properties.autoRotateInterval @context='html'}" data-order="${properties.carouselOrder}" data-hide="${properties.carouselHide}">
+        <div class="fixed-hero__container ${properties.imageBorder=='no'? 'fluid-hero__container': ''}">
+            <div class="fixed-hero__image-container">
+                <sly data-sly-call="${html.picture @ src1=imageFull.path, src2=imageSmall.path, mediaQuery='max-width: 767px', altText=properties.heroImageAlt, cssClass= 'responsive-image' }" />
+                <sly data-sly-test="${properties.youtube}">
+                    <iframe
+                        height="360"
+                        width="640"
+                        class="video__frame"
+                        frameborder="0"
+                        allowfullscreen="1"
+                        allow="autoplay; encrypted-media"
+                        title="YouTube video player"
+                        src="https://www.youtube.com/embed/${properties.youtube}?rel=0&amp;wmode=transparent&amp;modestbranding=1&amp;showinfo=0&amp;enablejsapi=1"
+                        id="video">
+                    </iframe>
+                    <button class="fixed-hero__play-btn fixed-hero__play-btn--mobile">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 62 62">
+                            <circle class="multimedia-asset__circle" cx="31" cy="31" r="31"></circle>
+                            <polygon class="multimedia-asset__triangle" points="24,17.6 24,43.4 41.3,30.4 "></polygon>
+                        </svg>
+                    </button>
+                </sly>
+            </div>
+
+            <div class="fixed-hero__copy-container ${properties.textColor}" style="left: ${properties.xPosition @context='styleString'}%; top: ${properties.yPosition @context='styleString'}%; width: ${properties.textBlockWidth @context='styleString'}%;" data-sly-test="${properties.heading}">
+                <h1 class="fixed-hero__heading">${properties.heading}</h1>
+                <p class="fixed-hero__sub-heading">${properties.subheading}</p>
+                <sly data-sly-test.linkText='${properties.ctaLabel ? properties.ctaLabel : "Learn More"}' />
+                <sly data-sly-test="${!properties.youtube}">
+                    <sly data-sly-test="${properties.ctaLinkUrl}" data-sly-call="${html.ai18n @ href = properties.ctaLinkUrl, text = linkText, class1='button', class2='button_primary', dataAnalyticsTrigger='cta-hero'}" />
+                </sly>
+            </div>
+
+            <div data-sly-test="${wcmmode.edit && properties.carouselOrder}" class="fixed-hero__order ${properties.textColor}">
+                <span class="fixed-hero__order--number">${properties.carouselOrder}</span>
+            </div>
+
+            <sly data-sly-test="${properties.youtube}">
+                <button class="fixed-hero__play-btn fixed-hero__play-btn--desktop">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 62 62">
+                        <circle class="multimedia-asset__circle" cx="31" cy="31" r="31"></circle>
+                        <polygon class="multimedia-asset__triangle" points="24,17.6 24,43.4 41.3,30.4 "></polygon>
+                    </svg>
+                </button>
+            </sly>
+        </div>
+    </div>
+</sly>
+
+<sly data-sly-test="${wcmmode.edit && !hasContent}" data-sly-include="placeholder.html" />

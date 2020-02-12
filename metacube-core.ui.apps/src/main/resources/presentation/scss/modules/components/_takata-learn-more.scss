@@ -1,0 +1,81 @@
+.takata-learn-more {
+    &__learn-more {
+        font-family: Arial, sans-serif;
+        border: 1px solid #c7c7c7;
+        padding: 55px 138px 78px;
+        font-size: 13px;
+        margin-top: 10px;
+        color: black;
+    }
+
+    &__takata-letter {
+        p {
+            font-size: 13px;
+            padding-bottom: 20px;
+        }
+    }
+
+    &__takata_text {
+        font-family: Arial, sans-serif;
+        font-size: 13px;
+        margin-top: 10px;
+        color: black;
+        padding-top: 10px;
+        text-align: center;
+
+        p {
+            padding-bottom: 10px;
+        }
+    }
+
+    &__signature {
+        padding-top: 25px;
+        font-size: 14px;
+    }
+
+    &__signature {
+        span {
+            display: block;
+            padding: 2px 0;
+            line-height: 15px;
+        }
+    }
+
+    &__learn-more-recall {
+        color: #176db7;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        text-align: center;
+        padding: 20px 0 0;
+    }
+
+    &__link {
+        cursor: pointer;
+        font-weight: 700;
+
+        &:hover {
+            color: #0090ff;
+        }
+
+        &:after {
+            font-family: global_svg;
+            font-weight: normal;
+            font-size: 16px;
+            font-size: 1.6rem;
+            vertical-align: middle;
+            padding: 5px;
+        }
+    }
+
+    &__active {
+        &:after {
+            content: "\5e";
+        }
+    }
+}
+
+.takata-learn-more__global-svg [class^="icon-"], .takata-learn-more__global-svg [class*=" icon-"], .takata-learn-more__global-svg[class^="icon-"], .takata-learn-more__global-svg[class*=" icon-"] {
+    font-family: global_svg;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

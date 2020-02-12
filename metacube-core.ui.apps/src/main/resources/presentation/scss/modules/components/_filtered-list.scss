@@ -1,0 +1,103 @@
+.filtered-list {
+    display: block;
+
+    &__container {
+        display: block;
+    }
+
+    &__list {
+        border-top: 1px solid $dusty-gray;
+
+        &-desc {
+            color: $dove-gray;
+            display: block;
+            font-size: 14px;
+            padding: $space $space-3 $space $space-4;
+            position: relative;
+
+            &:hover {
+                color: $blue-ribbon;
+            }
+
+            .icon-mc {
+                display: none;
+                font-size: $space-2;
+            }
+        }
+
+        &--active {
+            & > .filtered-list {
+                &__list-block {
+                    .filtered-list__list-desc {
+                        color: $blue-ribbon;
+                    }
+                }
+            }
+        }
+
+        &--open {
+            & > .filtered-list {
+                &__sublist-container {
+                    display: block;
+                }
+            }
+        }
+
+        &-block {
+            position: relative;
+
+            & > .icon-mc {
+                right: 0;
+                position: absolute;
+                transform: translateY(-50%);
+                top: 50%;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__sublist-block {
+        & > .filtered-list__list-block {
+            .icon-mc {
+                &:before {
+                    content: $icon-plus;
+                }
+            }
+        }
+
+        &.filtered-list__list--open {
+            & > .filtered-list__list-block {
+                .icon-mc {
+                    &:before {
+                        content: $icon-minus;
+                    }
+                }
+            }
+        }
+    }
+
+    &__sublist-container {
+        display: none;
+        padding-left: $space-4;
+    }
+
+    &--without-icons {
+        .icon-mc {
+            display: none;
+        }
+
+        .filtered-list__list {
+            border-top: none;
+
+            &-desc {
+                color: $black;
+                font-size: 12px;
+                font-weight: $font-weight-bold;
+
+                &:hover {
+                    color: $blue-ribbon;
+                }
+            }
+        }
+    }
+}

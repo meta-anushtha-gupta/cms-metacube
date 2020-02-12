@@ -1,0 +1,11 @@
+@mixin variant($name) {
+    body[data-variant=#{$name}] & {
+        @content
+    }
+}
+
+@mixin variant-with-theme($name, $theme) {
+    body[data-variant=#{$name}][data-theme=#{$theme}] & {
+        @content
+    }
+}

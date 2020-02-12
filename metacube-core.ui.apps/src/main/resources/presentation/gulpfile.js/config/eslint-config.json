@@ -1,0 +1,22 @@
+{
+    "parser": "babel-eslint",
+    "extends": [
+        "airbnb-base",
+        "./lint/index.js"
+    ],
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true,
+        "jasmine": true
+    },
+    "globals": {
+        "grecaptcha": false,
+        "google": false,
+        "_satellite": false,
+        "YT": false,
+        "describe": false,
+        "it": false,
+        "expect": false
+    }
+}

@@ -1,0 +1,156 @@
+/**
+  Styling for a CarouselNavigation template
+ */
+.carousel-nav {
+    // private props
+    $overlayButtonSize: 30px;
+
+    &--inactive {
+        display: none;
+    }
+
+    &--bottom {
+        margin-top: $space-3;
+
+        &-left {
+            text-align: left;
+        }
+
+        &-right {
+            text-align: right;
+        }
+    }
+
+    &__buttons {
+        line-height: 1;
+
+        .carousel-nav--bottom & {
+            display: inline-block;
+        }
+
+        .carousel-nav--overlay &,
+        .carousel-nav--sliding & {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 0;
+            width: 98%;
+            z-index: $z-content + 3;
+
+            @include media($large) {
+                display: flex;
+            }
+        }
+
+        .carousel-nav--show-small & {
+            display: flex;
+        }
+
+        .carousel-nav--sliding & {
+            @include media($large) {
+                opacity: 0;
+                transition: opacity $speed-4 ease-in-out;
+            }
+        }
+
+        .carousel-nav--overlay & {
+            @include media($large) {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__button {
+        color: $denim;
+        cursor: pointer;
+        font-size: 20px;
+        line-height: 1;
+        margin-right: $space;
+
+        .carousel-nav--overlay &,
+        .carousel-nav--sliding & {
+            color: $white;
+            height: $overlayButtonSize;
+            font-size: $overlayButtonSize;
+            text-shadow: 1px 1px 5px $dove-gray;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &--inactive {
+            color: $silver;
+            cursor: auto;
+
+            .carousel-nav--overlay &,
+            .carousel-nav--sliding & {
+                visibility: hidden;
+            }
+        }
+
+        &--next {
+            @include pseudo-icon($icon-arrow-right-square);
+        }
+
+        &--prev {
+            @include pseudo-icon($icon-arrow-left-square);
+        }
+    }
+
+    &__pages {
+        @include font-regular-bold(13px, 1);
+        color: $dove-gray;
+        display: inline-block;
+        margin: 0 $space-2 0 0;
+
+        .carousel-nav--overlay &,
+        .carousel-nav--sliding & {
+            display: none;
+        }
+    }
+
+    &__indicator {
+        position: absolute;
+        width: 100%;
+        top: auto;
+        bottom: 0;
+        z-index: $z-content + 3;
+
+        .carousel-nav--overlay-bottom & {
+            position: absolute;
+            width: 100%;
+            bottom: -$space-2;
+            z-index: $z-content + 3;
+        }
+    }
+
+    &__indicator-list {
+        text-align: center;
+        padding-bottom: $space-2;
+
+        & > li {
+            display: inline-block;
+        }
+    }
+
+    &__indicator-dot {
+        display: inline-block;
+        cursor: pointer;
+        width: $space-2;
+        height: $space-2;
+        margin: 0 $space;
+        background: $white;
+        border-radius: 50%;
+        outline: 0;
+        box-shadow: 1px 1px 1px $dusty-gray;
+
+        &--selected {
+            background: $azure-radiance;
+        }
+    }
+}

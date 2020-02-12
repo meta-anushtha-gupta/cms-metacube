@@ -1,0 +1,12 @@
+<sly data-sly-use.helper="/apps/metacube/utility/aem-helper.js" />
+<sly data-sly-test.headerComponentPath="${'/content/{0}/admin/header-footer/jcr:content/nav-container' @ format=[helper.siteName]}" />
+<sly data-sly-test.heroComponentPath="${'/content/{0}/admin/header-footer/jcr:content/hero-image' @ format=[helper.siteName]}" />
+
+<header class="header" data-load-module="Header">
+	<sly data-sly-resource="${ @ path=headerComponentPath, resourceType='/apps/metacube/components/admin/global/nav/nav-container', wcmmode='disabled'}" />
+
+	<sly data-sly-test="${!pageProperties.hideHeroImage}"
+		data-sly-resource="${ @ path=heroComponentPath, resourceType='/apps/metacube/components/hero-image', wcmmode='disabled'}" />
+
+	
+</header>

@@ -1,0 +1,206 @@
+.stay-connected {
+    // padding: $space-3 0px;
+    margin-bottom: $space-3;
+
+    &__stay-in-touch {
+        color: $mine-shaft;
+    }
+
+    &__other-sites {
+        @include media($mobile-only) {
+            border-bottom: 1px solid $silver;
+        }
+    }
+
+    &__title {
+        font-size: 26px;
+        padding-bottom: $space-2;
+        // margin-top: $space-2;
+        margin-bottom: $space-4;
+    }
+
+    &__sub-title {
+        font-style: italic;
+        font-size: 14px;
+    }
+
+    &__form {
+        display: inline-block;
+        @include span-columns(12);
+
+        @include media($tablet) {
+            @include span-columns(8);
+        }
+
+        &-group {
+            display: inline-block;
+            width: 60%;
+            margin-bottom: $space-2;
+        }
+
+        &-input {
+            width: 100%;
+            height: 34px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: $space+1 $space-2+2;
+
+            &--error {
+                margin-top: $space;
+                color: red;
+                font-weight: $font-weight-bold;
+            }
+        }
+    }
+
+    &__link-container {
+        @include clearfix;
+    }
+
+    &__social-links-container {
+        @include span-columns(12);
+
+        @include media($tablet) {
+            @include span-columns(4);
+        }
+    }
+
+    &__social-links-list {
+        display: inline-block;
+        padding-left: $space-4;
+
+        &:first-child {
+            padding-left: 0;
+        }
+    }
+
+    &__social-link {
+        font-size: $space-8;
+        color: $black;
+        display: inline-block;
+
+        &:hover,
+        &:focus {
+            animation: none;
+            color: $azure-radiance;
+        }
+    }
+
+    &__other-sites-container {
+
+        @include media($mobile-only) {
+            padding-top: $space-2;
+        }
+        @include media($tablet) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+    }
+
+    &__other-links-list {
+
+        @include media($mobile-only) {
+            &:first-child {
+                .stay-connected__other-link {
+                    padding-top: $space;
+                }
+            }
+
+            &:last-child {
+                .stay-connected__other-link {
+                    padding-top: 0;
+                }
+            }
+        }
+
+        .icon-mb.icon-mbvans span {
+            @include font-heading(18px, 1);
+        }
+
+        .icon-mb.icon-mbfs span {
+            @include font-heading(18px, 1, $font-weight-regular, italic)
+        }
+
+        .icon-mb.icon-mbvans span,
+        .icon-mb.icon-mbfs span {
+            //override offscreen class
+            position: static;  //or relative
+            overflow: visible;
+        }
+
+        .icon-smart, .icon-AMG_logo {
+            line-height: $space-2;
+        }
+    }
+
+    &__other-link {
+
+        @include media($mobile-only) {
+            display: block;
+            width: 100%;
+            display: inline-block;
+            height: 30px;
+            overflow: hidden;
+            padding-top: $space-2;
+        }
+        color: $black;
+
+        &:hover,
+        &:focus {
+            animation: none;
+            color: $azure-radiance;
+        }
+    }
+
+    &--icon-mbvans {
+        font-size: $space-3;
+    }
+
+    &--icon-smart {
+        font-size: $space-16;
+    }
+
+    &--icon-AMG_logo {
+        font-size: $space-16;
+    }
+
+    &--icon-mbfs {
+        font-size: $space-3;
+    }
+
+    &__subscribe-cta {
+        margin-bottom: $space-4;
+        font-size: 14px;
+        font-weight: $font-weight-regular;
+        text-align: center;
+        background: linear-gradient(to bottom, $charcoal 8%, $black 100%);
+        min-width: 110px;
+        padding: 4px $space-2;
+        border: none;
+        border-radius: 2px;
+
+        @include media($desktop) {
+            margin-bottom: 0;
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+}
+
+.column-display {
+    &--2, &--3, &--4 {
+        .stay-connected {
+            &__form {
+                @include span-columns(12);
+                margin-bottom: $space-2;
+            }
+
+            &__social-links-container {
+                @include span-columns(12);
+            }
+        }
+    }
+}

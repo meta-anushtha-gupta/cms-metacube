@@ -1,0 +1,32 @@
+<sly data-sly-use.html="${ '/apps/microsites/components/utils/templates/html.html' }" data-sly-use.itemList="${ '/apps/microsites/components/utils/multifield-json.js' @ mfName='colItems' }" />
+
+<sly data-sly-test.hasContent="${properties.sectionHeader || itemList.items}">
+
+    <section class="featured-promo-list module-separator featured-promo-list_display-column--${properties.displayColumn}" data-analytics-container="{'blade': 'featured-promo-list'}">
+        <h1 data-sly-test=${properties.sectionHeader} class="featured-promo-list__section-header">
+            ${properties.sectionHeader}
+        </h1>
+        <div data-sly-test=${itemList.items} data-sly-list.itemListJson=${itemList.items} class="featured-promo-list__tout-container ${properties.imageBorder ? 'image-border' : ''} featured-promo-list__${properties.separator}">
+            <div class="featured-promo-list__tout">
+                <div class="featured-promo-list__image-container img-container">
+                    <a class="featured-promo-list__image" data-sly-test="${itemListJson.ctaLink}" data-sly-use.link="${ 'com.mb.microsites.core.wcmusepojo.Link' @ path=itemListJson.ctaLink}" href="${link.href}" target="${link.external ? '_blank' : ''}" rel="${link.external ? 'noopener' : ''}" data-analytics-trigger="cta-promo">
+                        <sly data-sly-call="${html.picture @ src1=itemListJson.imgLarge, src2=itemListJson.imgSmall, mediaQuery='max-width: 767px', altText=itemListJson.imgAltText, cssClass='responsive-image' }" />
+                        <sly data-sly-test="${itemListJson.imgHoverLarge || itemListJson.imgHoverSmall}" data-sly-call="${html.picture @ src1=itemListJson.imgHoverLarge, src2=itemListJson.imgHoverSmall, mediaQuery='max-width: 767px', altText=itemListJson.imgHoverAltText, cssClass='responsive-image' }" />
+                    </a>
+                </div>
+                <div class="featured-promo-list__copy-container">
+                    <h2 data-sly-test=${itemListJson.heading} class="featured-promo-list__tout-heading">${itemListJson.heading}</h2>
+                    <p class="featured-promo-list__tout-sub-heading" data-sly-test=${itemListJson.subHeading}>
+                        ${itemListJson.subHeading}
+                    </p>
+                    <p data-sly-test=${itemListJson.description} class="featured-promo-list__tout-desc">${itemListJson.description}</p>
+                    <div class="featured-promo-list__link-container">
+                        <a data-sly-test="${itemListJson.ctaLink}" data-sly-use.link="${ 'com.mb.microsites.core.wcmusepojo.Link' @ path=itemListJson.ctaLink}" class="${itemListJson.ctaStyle} ${itemListJson.ctaStyle}_plain-link" href="${link.href}" target="${link.external ? '_blank' : ''}" rel="${link.external ? 'noopener' : ''}" data-analytics-trigger="cta-promo"> ${itemListJson.ctaText}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</sly>
+
+<sly data-sly-test="${wcmmode.edit && !hasContent}" data-sly-include="placeholder.html" />

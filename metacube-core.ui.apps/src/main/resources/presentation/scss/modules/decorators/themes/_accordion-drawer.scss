@@ -1,0 +1,49 @@
+.accordion--drawer {
+    &:not(.accordion--disabled-small) {
+        &:not(.accordion--disabled-large) {
+            .accordion {
+                &__button {
+                    @include highlight-copy-bold;
+                    padding: $space-3 0;
+                    text-align: center;
+
+                    @include media($tablet) {
+                        padding: $space-2 $space-6;
+                        text-align: left;
+                    }
+                }
+
+                &__item {
+                    &--active {
+                        .accordion__title {
+                            &:after {
+                                @include icon($icon-arrow-up-square);
+                                transform: none;
+                            }
+                        }
+                    }
+                }
+
+                &__title {
+                    border-bottom: 1px solid $silver;
+
+                    @include media($tablet) {
+                        border: 0;
+                    }
+
+                    &:after {
+                        position: static;
+                        margin-left: $space-3;
+                        vertical-align: middle;
+                        transform: none;
+                    }
+                }
+
+                &__pane {
+                    padding: 0;
+                    border-top: none;
+                }
+            }
+        }
+    }
+}

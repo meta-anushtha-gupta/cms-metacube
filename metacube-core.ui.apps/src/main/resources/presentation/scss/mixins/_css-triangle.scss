@@ -1,0 +1,39 @@
+@mixin css-triangle($direction: null, $size: 5px, $color: $mine-shaft) {
+    position: absolute;
+
+    @if($direction == top) {
+        left: 50%;
+        transform: translate3d(0, -50%, 0);
+        top: -$size + 4px;
+        margin-left: -$size;
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid$color;
+    } @else if($direction == left) {
+        top: 50%;
+        transform: translate3d(-50%, 0, 0);
+        left: -$size - 4px;
+        margin-top: -$size - 4px;
+        margin-left: $size;
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid$color;
+    } @else if($direction == bottom) {
+        left: 50%;
+        transform: translate3d(0, -50%, 0);
+        bottom: -$size - 4px;
+        margin-left: $size;
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid$color;
+    } @else if($direction == right) {
+        top: 50%;
+        transform: translate3d(-50%, 0, 0);
+        right: -$size - 4px;
+        margin-top: -$size - 4px;
+        margin-right: 0;
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid$color;
+    }
+}

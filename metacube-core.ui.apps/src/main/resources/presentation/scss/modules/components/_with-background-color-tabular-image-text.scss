@@ -1,0 +1,38 @@
+.with-background-color-tabular-image-text {
+    .tabular-image-text {
+        border: 1px solid $alto;
+        border-radius: 3px;
+        padding: $space;
+        background-color: $athens-gray;
+
+        &__cell {
+            border: none;
+            vertical-align: top;
+        }
+
+        &__media {
+            border: 1px solid $alto;
+            padding: $space;
+            border-radius: 3px;
+        }
+
+        &__heading {
+            font-family: $secondary-font-family;
+            font-size: $space-4;
+            font-weight: 500;
+            text-align: left;
+            margin-bottom: $space-2;
+        }
+
+        p {
+            font-family: $helvetica-font-family;
+            font-size: 12px;
+            line-height: $space-4;
+        }
+
+        a {
+            font-weight: 700;
+            font-size: 14px;
+        }
+    }
+}

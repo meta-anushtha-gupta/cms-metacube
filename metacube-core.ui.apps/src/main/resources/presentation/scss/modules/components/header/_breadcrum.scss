@@ -1,0 +1,31 @@
+.breadcrumb {
+    padding: $space 0;
+    background-color: $white;
+    width: 100%;
+
+    &__list-container {
+        margin-bottom: $space-3;
+    }
+
+    &__list {
+        color: #a3a3a3;
+        display: inline-block;
+
+        + .breadcrumb__list {
+            &:before {
+                content: "/\00a0";
+                padding: 0 5px;
+                color: #ccc;
+            }
+        }
+    }
+
+    &__link {
+        color: $silver-chalice;
+        display: inline-block;
+
+        &:hover {
+            color: $cerulean;
+        }
+    }
+}

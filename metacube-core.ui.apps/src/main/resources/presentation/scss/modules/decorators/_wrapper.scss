@@ -1,0 +1,19 @@
+// Styling for wrapper/decorating containers with a default width
+.wrapper {
+    @include outer-container(100%);
+    @include mobile-container-width();
+    margin: 0 auto;
+
+    @include media($tablet) {
+        @include tablet-container-width();
+    }
+
+    @include media($desktop) {
+        @include desktop-container-width();
+        max-width: 940px;
+    }
+
+    .wrapper & {
+        width: 100%;
+    }
+}

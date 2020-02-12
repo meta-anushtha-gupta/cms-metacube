@@ -1,0 +1,9 @@
+// Styles for decorating a module separation
+.module-separator {
+    padding-top: $space-4;
+    padding-bottom: $space-4;
+    @include media($large) {
+        padding-top: $space-6;
+        padding-bottom: $space-6;
+    }
+}

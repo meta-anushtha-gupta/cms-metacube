@@ -1,0 +1,204 @@
+.vin-recall {
+    color: $mine-shaft;
+    background-color: #CCCCCC;
+    justify-content: center;
+    margin: 0 auto;
+
+    &__title {
+        text-align: center;
+        padding-top: $space;
+        font-family: $secondary-font-name;
+        font-size: 32px;
+    }
+
+    &__sub-title {
+        font-family: Arial, sans-serif;
+        padding-bottom: $space-2;
+    }
+
+    &__section {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    &__group {
+        padding: $space 0px;
+    }
+
+    &__group_btn {
+        padding: $space-2 0px;
+    }
+
+    &__table {
+        width: 100%;
+    }
+
+    &__table_column {
+        padding: 0px 0px 0px 15px;
+        text-align: left;
+    }
+
+    &__control {
+        width: 100%;
+        border: 1px solid $dark-gray;
+        border-radius: 2px;
+        height: $space-6+2;
+        padding: $space+2;
+
+        &:focus {
+            border-color: $cornflower-blue;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+        }
+
+        &--error, &--error:focus {
+            border-color: $apple-blossom;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        }
+
+        &--success, &--success:focus {
+            border-color: $killarney;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px $fern;
+        }
+    }
+
+    &__text {
+        font-size: $space-3;
+        font-weight: bold;
+        width: 100%;
+    }
+
+    &__btn {
+        color: white;
+        padding: $space $space-4;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin: 0 auto;
+        cursor: pointer;
+        border-radius: 2px;
+        background-color: #444;
+    }
+
+    &__hide {
+        visibility: hidden;
+    }
+
+    &__error-field {
+        color: $apple-blossom;
+        @include featured-copy-bold;
+        margin-top: $space;
+
+        &--hidden {
+            display: none;
+        }
+    }
+}
+
+.vin-result {
+    background-color: white;
+    margin-top: 20px;
+
+    &__recall_loader {
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #3498db;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 2s linear infinite;
+    }
+
+    &__result_table_toggle_text {
+        cursor: pointer;
+        font-family: Arial, sans-serif;
+        font-size: 15px;
+    }
+
+    &__result_selection_container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    &__result_table_selection {
+        width: 100%;
+    }
+
+    &__result_table_selection_column {
+        text-align: center;
+    }
+
+    &__result_table_selection_column_left {
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    &__result_table_selection_column_right {
+        text-align: right;
+        padding-left: 10px;
+    }
+
+    &__recall_model_title {
+        font-family: $secondary-font-name;
+        text-align: left;
+        padding-top: 20px;
+        font-size: 30px;
+    }
+
+    &__recall-result &__open-recall.active, &__recall-result &__closed-recall.active, &__recall-result &__open-other.active, &__recall-result &__closed-other.active {
+        display: block;
+    }
+
+    &__recall-result &__open-recall, &__recall-result &__closed-recall, &__recall-result &__open-other, &__recall-result &__closed-other {
+        display: none;
+    }
+
+    &__recall-result #recall-details-table {
+        font-family: Arial,sans-serif;
+        font-weight: normal;
+        font-size: 12px;
+        width: 100%;
+        border-width: 1px;
+        border-spacing: 0px;
+        border-style: solid;
+        border-color: #c7c7c7;
+        border-collapse: collapse;
+    }
+
+    &__tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+
+    &__tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+    }
+
+    &__recall-result #recall-details-table .heading-row {
+        font-weight: bold;
+        height: 40px;
+        background-color: #f6f6f6;
+    }
+
+    &__recall-result #recall-details-table .col1, &__recall-result #recall-details-table &__col2, &__recall-result #recall-details-table &__col3 {
+        width: 11%;
+    }
+
+    &__recall-result #recall-details-table th, &__recall-result #recall-details-table td {
+        border-width: 1px;
+        padding: 5px 10px;
+        border-style: solid;
+        border-color: #c7c7c7;
+        vertical-align: top;
+    }
+
+    &__recall-result #recall-details-table &__col4, &__recall-result #recall-details-table &__col5 {
+        width: 10%;
+    }
+
+    &__recall-result #recall-details-table &__col6 {
+        width: 30%;
+    }
+}

@@ -1,0 +1,31 @@
+$font-weight-light: 200;
+$font-weight-book: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+$primary-font-name : 'Arial';
+$secondary-font-name: 'corporateacondpro';
+
+$secondary-fonts: medium regular;
+$secondary-fonts-italic: lightitalic mediumitalic regularitalic;
+$secondary-font-weights: $font-weight-medium $font-weight-regular;
+$secondary-font-weights-italic: $font-weight-light $font-weight-medium $font-weight-regular;
+$secondary-font-formats: eot svg ttf woff;
+
+$tertiary-font-name: 'corpos';
+$tertiary-fonts: regular bold;
+$tertiary-fonts-italic: italic bolditalic;
+$tertiary-font-weights: $font-weight-regular $font-weight-bold;
+$tertiary-font-weights-italic: $font-weight-regular $font-weight-bold;
+$tertiary-font-formats: eot svg ttf woff;
+
+$helvetica-font-name: 'Helvetica';
+
+$default-font-family: $primary-font-name, Helvetica, Arial, sans-serif;
+$secondary-font-family: $secondary-font-name, sans-serif;
+$tertiary-font-family: $tertiary-font-name, sans-serif;
+
+$helvetica-font-family: $helvetica-font-name, sans-serif;

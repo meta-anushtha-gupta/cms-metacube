@@ -1,0 +1,72 @@
+.parts-pro-locator {
+    @include featured-copy-reg;
+
+    &__heading {
+        @include call-out-text-bold;
+        margin: $space-2 0px;
+    }
+
+    &__description {
+        margin-bottom: $space-2;
+    }
+
+    &__drop-down {
+        background-color: $denim;
+        color: $white;
+        font-size: 14px;
+        padding: $space+3;
+        border: none;
+    }
+
+    &__dealer {
+        &__list {
+            margin-top: $space-4;
+
+            &-item {
+                border-top: 1px solid $silver;
+                padding: $space-3 0px;
+
+                @include media($desktop) {
+                    display: flex;
+                }
+            }
+        }
+
+        &__details {
+            @include span-columns(12);
+            float: none;
+            margin-bottom: $space-2;
+
+            @include media($desktop) {
+                @include span-columns(9);
+                margin-bottom: 0px;
+            }
+        }
+
+        &__link {
+            display: block;
+            max-width: 50%;
+            padding: $space+1 $space-2+2;
+            background: $denim;
+            color: $white;
+            margin-bottom: $space-2;
+            border-radius: 2px;
+            text-align: center;
+
+            @include media($medium) {
+                display: inline-block;
+                max-width: none;
+                min-width: 110px;
+            }
+
+            &__container {
+                @include span-columns(12);
+                float: none;
+
+                @include media($desktop) {
+                    @include span-columns(3);
+                }
+            }
+        }
+    }
+}

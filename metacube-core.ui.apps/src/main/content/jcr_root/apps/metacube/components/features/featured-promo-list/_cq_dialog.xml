@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Featured Promo List"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    mode="edit">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <contentTab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Content"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <sectionHeader
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Limit to 25 characters, including spaces"
+                                fieldLabel="Section Header"
+                                name="./sectionHeader"
+                                required="{Boolean}false"/>
+                            <data
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                class="foundation-layout-util-maximized-alt long-label"
+                                fieldLabel="Items">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                    acs-commons-nested="JSON_STORE"
+                                    name="./colItems">
+                                    <layout
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                        method="absolute"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <imgLarge
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    fieldDescription="Image dimension : 1410 x 570"
+                                                    fieldLabel="Image: Large Screen"
+                                                    name="./imgLarge"
+                                                    required="true"
+                                                    rootPath="/content/dam/microsites"/>
+                                                <imgSmall
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    fieldDescription="Image dimensions: 420 x 251"
+                                                    fieldLabel="Image: Small Screen"
+                                                    name="./imgSmall"
+                                                    rootPath="/content/dam/microsites"/>
+                                                <imgAltText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    class="foundation-layout-util-maximized-alt long-label"
+                                                    fieldLabel="Image Alt Text"
+                                                    name="./imgAltText"
+                                                    required="true"/>
+                                                <imgHoverLarge
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    fieldDescription="Hover Image dimension : 1410 x 570"
+                                                    fieldLabel="Hover Image: Large Screen"
+                                                    name="./imgHoverLarge"
+                                                    required="false"
+                                                    rootPath="/content/dam/microsites"/>
+                                                <imgHoverSmall
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    fieldDescription="Hover Image dimensions: 420 x 251"
+                                                    fieldLabel="Hover Image: Small Screen"
+                                                    name="./imgHoverSmall"
+                                                    rootPath="/content/dam/microsites"/>
+                                                <imgHoverAltText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    class="foundation-layout-util-maximized-alt long-label"
+                                                    fieldLabel="Hover Image Alt Text"
+                                                    name="./imgHoverAltText"
+                                                    required="false"/>
+                                                <heading
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldDescription="Enter a Heading to be used with this image only. Limit to 70 characters, including spaces"
+                                                    fieldLabel="Heading"
+                                                    name="./heading"
+                                                    required="{Boolean}false"/>
+                                                <subHeading
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldDescription="Enter a Sub Heading to be used with this image only. Limit to 70 characters, including spaces"
+                                                    fieldLabel="Sub Heading"
+                                                    name="./subHeading"
+                                                    required="{Boolean}false"/>
+                                                <description
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                                    fieldDescription="Enter a Description to be used with this image only. Limit to 300 characters, including spaces"
+                                                    fieldLabel="Description"
+                                                    name="./description"
+                                                    required="{Boolean}false"/>
+                                                <ctaText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldDescription="Limit to 15 characters, including spaces"
+                                                    fieldLabel="cta Text"
+                                                    name="./ctaText"
+                                                    required="{Boolean}false"/>
+                                                <ctaLink
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    fieldLabel="cta Link"
+                                                    name="./ctaLink"
+                                                    required="{Boolean}false"
+                                                    rootPath="/content"/>
+                                                <style
+							                        jcr:primaryType="nt:unstructured"
+							                        sling:resourceType="granite/ui/components/foundation/include"
+							                        path="/apps/microsites/components/widgets/ctaLinkStyle/ctaStyle"/>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </data>
+                        </items>
+                    </column>
+                </items>
+            </contentTab>
+            <styleTab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Style"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <imageBorder
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                name="./imageBorder"
+                                text="Image Border"
+                                value="true"/>
+                            <imageBorderType
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                name="./imageBorder@TypeHint"
+                                value="Boolean"/>
+                        </items>
+                    </column>
+                    <displayColumn
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldLabel="Display Column"
+                        name="./displayColumn"
+                        required="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column1
+                                jcr:primaryType="nt:unstructured"
+                                text="1"
+                                value="1"/>
+                            <column2
+                                jcr:primaryType="nt:unstructured"
+                                text="2 "
+                                value="2"/>
+                            <column3
+                                jcr:primaryType="nt:unstructured"
+                                selected="{Boolean}true"
+                                text="3 "
+                                value="3"/>
+                            <column4
+                                jcr:primaryType="nt:unstructured"
+                                text="4 "
+                                value="4"/>
+                        </items>
+                    </displayColumn>
+                    <separator
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldLabel="Separator Position"
+                        name="./separator"
+                        required="{Boolean}false">
+                        <items jcr:primaryType="nt:unstructured">
+                            <pleaseSelect
+                                jcr:primaryType="nt:unstructured"
+                                text="Please Select"
+                                value=""/>
+                            <top
+                                jcr:primaryType="nt:unstructured"
+                                text="Top"
+                                value="separator-top"/>
+                            <bottom
+                                jcr:primaryType="nt:unstructured"
+                                text="Bottom"
+                                value="separator-bottom"/>
+                            <both
+                                jcr:primaryType="nt:unstructured"
+                                text="Both"
+                                value="separator-both"/>
+                        </items>
+                    </separator>
+                </items>
+            </styleTab>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,16 @@
+.tab {
+    &__list {
+        &--active {
+            // color: $azure-radiance;
+            color: $denim;
+        }
+    }
+
+    &__content {
+        display: none;
+
+        &--active {
+            display: block;
+        }
+    }
+}

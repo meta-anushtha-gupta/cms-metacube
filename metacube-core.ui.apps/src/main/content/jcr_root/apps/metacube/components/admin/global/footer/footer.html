@@ -1,0 +1,14 @@
+<sly data-sly-use.menuList="${ '/apps/metacube/components/utils/multifield-json.js' @ mfName='colLinks' }"
+	 data-sly-use.html="${ '/apps/metacube/components/utils/templates/html.html' }"
+	 data-sly-use.date="${ '/apps/metacube/components/utils/getCurrentYear.js' }" />
+
+<sly data-sly-test.isFooterHeading="${properties.footerHeading}">
+	${properties.footerHeading}
+</sly>
+<sly data-sly-test="${!isFooterHeading}">
+	&copy; ${date.currentYear } Metacube Software Private Limited
+</sly>
+
+<sly data-sly-list.menuListJson="${menuList.items}">
+	<sly data-sly-call="${html.a @ href=menuListJson.linkTarget, text=menuListJson.linkText, class1='footer__link'}" />
+</sly>

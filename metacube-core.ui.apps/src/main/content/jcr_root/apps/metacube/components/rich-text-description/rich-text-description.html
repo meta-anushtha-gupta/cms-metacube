@@ -1,0 +1,25 @@
+<section data-sly-test.hasContent="${ properties.heading || properties.subHeading || properties.text}" class="${properties.style} ${properties.tableBorderStyle}">
+	<div class="rich-text-desc">
+	<div class="rich-text-desc__container" style="margin:0% ${properties.margin @ context='styleString'}%">
+    	<div class="rich-text-desc__title-container">
+			<h2 class="rich-text-desc__title">${properties.heading}</h2>
+        </div>
+        <div class="rich-text-desc__subTitle-container">
+			<h3 class="rich-text-desc__subTitle">${properties.subHeading}</h3>
+        </div>
+        <sly data-sly-test.containStyle="${properties.fontStyle}">
+            <div style="font-family:'${properties.fontStyle @ context='styleString'}'; font-size: ${properties.fontSize @ context='styleString'}px" class="rich-text-desc__description-container" >
+    			<!-- Do not apply classes on rich text descrition -->
+    			${properties.text @ context='html'}
+    		</div>
+        </sly>
+        <sly data-sly-test="${!containStyle}">
+            <div style="font-size: ${properties.fontSize @ context='styleString'}px" class="rich-text-desc__description-container" >
+    			<!-- Do not apply classes on rich text descrition -->
+    			${properties.text @ context='html'}
+    		</div>
+        </sly>
+	</div>
+</div>
+</section>
+<sly data-sly-test="${wcmmode.edit && !hasContent}" data-sly-include="placeholder.html" />

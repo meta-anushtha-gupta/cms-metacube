@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/metacube">
+        <exclude pattern="/apps/metacube/install"/>
+    </filter>
+    <filter root="/apps/sling"/>
+    <filter root="/etc/designs/metacube"/>
+	<filter root="/etc/acs-commons/lists">
+		<include pattern="/etc/acs-commons/lists/metacube-.*" />
+	</filter>
+</workspaceFilter>

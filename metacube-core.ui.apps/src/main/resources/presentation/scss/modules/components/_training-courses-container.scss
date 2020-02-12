@@ -1,0 +1,100 @@
+.training-courses {
+    &-container {
+        padding: $space-4 0px;
+    }
+
+    &-wrapper {
+        &.hidden {
+            display: none;
+        }
+
+        .clearfix {
+            @include clearfix;
+        }
+    }
+
+    &-title {
+        @include section-reg;
+        margin: $space-4 0 $space-3;
+    }
+
+    &-mb-collision-center {
+        padding-bottom: $space-4;
+    }
+
+    &__tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &-title {
+            @include featured-heading;
+            margin-bottom: $space-4;
+        }
+
+        &-container {
+            .tab {
+                &__item {
+                    padding: $space-2 0;
+                    @include media($mobile-only) {
+                        width: 50%;
+                    }
+                }
+
+                &-link {
+                    @include featured-copy-reg;
+                    color: $scorpion;
+
+                    &:hover {
+                        color: $havelock-blue;
+                    }
+
+                    &--active {
+                        color: $havelock-blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tab {
+    &-title {
+        @include featured-heading;
+        margin-bottom: $space-4;
+    }
+
+    &-wrapper {
+        padding-top: $space-4;
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            &-container {
+                .tab {
+                    &__item {
+                        padding: $space-2 0;
+                        @include media($mobile-only) {
+                            width: 50%;
+                        }
+                    }
+
+                    &-link {
+                        @include featured-copy-reg;
+                        color: $scorpion;
+
+                        &:hover {
+                            color: $havelock-blue;
+                        }
+
+                        &--active {
+                            color: $havelock-blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

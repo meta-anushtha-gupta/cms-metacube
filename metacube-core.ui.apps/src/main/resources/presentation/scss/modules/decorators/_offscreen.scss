@@ -1,0 +1,24 @@
+// Styling for positioning an element offscreen
+//hides content from visual users, but not screen readers
+//https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
+.offscreen {
+    @include offscreen();
+}
+
+.skip-navigation {
+    @extend .offscreen;
+
+    &:focus {
+        @include media($large) {
+            clip: auto;
+            color: $white;
+            height: auto;
+            left: $space-12;
+            top: $space-4;
+            width: auto;
+        }
+        @include media($xlarge) {
+            left: $space-16;
+        }
+    }
+}

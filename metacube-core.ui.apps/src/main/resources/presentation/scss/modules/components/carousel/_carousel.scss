@@ -1,0 +1,54 @@
+.carousel {
+    position: relative;
+
+    &__slides {
+        position: relative;
+        overflow: hidden;
+        line-height: 0;
+    }
+
+    &__slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        list-style: none;
+        transition: opacity ease $speed-13;
+        z-index: $z-content - 2;
+
+        &--active {
+            height: auto;
+            opacity: 1;
+            position: relative;
+            z-index: $z-content - 1;
+        }
+    }
+
+    @include media($tablet) {
+        //IE ONLY Horizontal Overflow Fix
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            overflow-x: hidden;
+        }
+
+        //EDGE ONLY
+        @supports (-ms-ime-align:auto) {
+            overflow-x: hidden;
+        }
+    }
+
+    @include media($large) {
+        &:hover {
+            .carousel-nav--sliding,
+            .carousel-nav--overlay {
+                .carousel-nav__buttons {
+                    @include media($large) {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

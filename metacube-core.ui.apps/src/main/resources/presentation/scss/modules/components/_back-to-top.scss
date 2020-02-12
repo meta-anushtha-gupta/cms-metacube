@@ -1,0 +1,59 @@
+.back-to-top {
+    height: 70px;
+    position: relative;
+
+    &__cta {
+        background-color: $white;
+        border-radius: 50%;
+        bottom: 20px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        display: block;
+        height: 50px;
+        right: 0;
+        opacity: 0;
+        pointer-events: auto;
+        position: fixed;
+        transform: translateX(-50%);
+        transition: background-color 0.5s;
+        width: 50px;
+        z-index: $z-sticky;
+        color: $blitz;
+        display: none;
+        left: 50%;
+
+        &:before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+        }
+
+        &:hover,
+        &:focus {
+            animation: none;
+            background-color: $mercury;
+        }
+    }
+
+    &--enabled {
+        .back-to-top__cta {
+            opacity: 0.75;
+            display: block;
+
+            &:hover,
+            &:focus {
+                animation: none;
+                background-color: $mercury;
+            }
+        }
+    }
+
+    &--sticky {
+        .back-to-top__cta {
+            position: absolute;
+            z-index: $z-content*1-1;
+            display: block;
+        }
+    }
+}

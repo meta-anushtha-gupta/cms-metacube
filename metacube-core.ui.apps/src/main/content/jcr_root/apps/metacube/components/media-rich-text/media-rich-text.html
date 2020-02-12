@@ -1,0 +1,163 @@
+<sly data-sly-use.html="${ '/apps/metacube/components/utils/templates/html.html' }"
+    data-sly-use.imagePaths="${ '/apps/metacube/components/utils/multifield-json.js' @ mfName='image' }"
+    data-sly-use.helper="/apps/metacube/utility/aem-helper.js" />
+<sly data-sly-test.siteName="${helper.siteName @context = 'text'}"/>
+<sly data-sly-test.hasCopyContent="${properties.heading || properties.subHeading || properties.text}" />
+<sly data-sly-test.hasMedia="${properties.html5video|| properties.youtube || properties.vimeo || imagePaths.items}" />
+<div class="${properties.imageCarousel ? 'media-text--has-carousel' : 'media-text--no-carousel'}">
+    <section data-sly-test.hasContent="${hasCopyContent || hasMedia}" 
+        class="media-text wrapper ${properties.separator}  media-text--${properties.textBlock} media-text__${properties.contentAlignment} media-text__vertical--${properties.mediaTextVerticalAlignment} ">
+    <div class="media-text__media-container ${hasCopyContent? '' : 'media-text--full-width'}" data-sly-test="${hasMedia}">
+        <sly data-sly-test.isImageCarousel="${properties.imageCarousel ? 'MediaText' : ''}" />
+        <div class="media-text__media" data-load-module="${isImageCarousel.length>0 && !wcmmode.edit ? isImageCarousel : ''}">
+            <div data-sly-test.hasVideo="${properties.html5video|| properties.youtube || properties.vimeo}" class=" media-text__video-preview-container">
+                <video data-sly-test.hasHtml5Video="${properties.html5video}" class="media-text__video" loop="" role="presentation" playsinline="" controls>
+                    <source src=${properties.html5video} type="video/mp4">
+                </video>
+                <sly data-sly-test.hasYoutube="${!hasHtml5Video && properties.youtube}">
+                    <div class="video_preview-container">
+                        <picture>
+                            <img src="/etc/designs/metacube/images/placeholder_938x531.png" alt="" class="video__img">
+                        </picture>
+                    </div>
+                    <iframe class="media-text__video-iframe" height="360" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media" title="YouTube video player" src="https://www.youtube.com/embed/${properties.youtube}?rel=0&amp;wmode=transparent&amp;modestbranding=1&amp;showinfo=0">
+                    </iframe>
+                </sly>
+
+                <sly data-sly-test.hasVimeo="${!hasHtml5Video && !hasYoutube && properties.vimeo}">
+                    <div class="video_preview-container">
+                        <picture>
+                            <img src="/etc/designs/metacube/images/placeholder_938x531.png" alt="" class="video__img">
+                        </picture>
+                    </div>
+                    <iframe class="media-text__video-iframe" height="360" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media" title="Vimeo video player" src="https://player.vimeo.com/video/${properties.vimeo}">
+                    </iframe>
+                </sly>
+            </div>
+            <sly data-sly-test="${!hasVideo && imagePaths.items}">
+                <h3 data-sly-test="${properties.imageTitle}" class="media-text__title">${properties.imageTitle}</h3>
+                <sly data-sly-test.isImageBorder="${properties.imageBorder ? 'media-text__image--border' : ''}" />
+                <sly data-sly-test.isThumbnail="${properties.imageThumbnail ? 'media-text__image media-text__image-thumbnail' : 'media-text__image'}"></sly>
+                <sly data-sly-test.cssImageClass="${[isThumbnail, isImageBorder] @ join=' '}" />
+                <!-- <sly data-sly-test.cssImageClass="${'{0} {1}' @ format=[ isThumbnail, isImageBorder]}"></sly> -->
+                <sly data-sly-test="${isImageCarousel}">
+                    <div class="media-text__image-container">
+                        <ul class="media-text__carousel-slides" data-sly-list.imagePathsJson="${imagePaths.items}">
+                            <li class="media-text__carousel-slide">
+                                <sly data-sly-call="${html.picture @ src1=imagePathsJson.imagePath, src2='', mediaQuery='max-width: 767px', altText=imagePathsJson.imageAlt, cssClass=cssImageClass}" />
+                            </li>
+                        </ul>
+                        <div class="media-text__carousel-navigation">
+                            <div class="media-text__carousel-nav-pages">
+                                <span data-carousel-page-current>1</span>/<span data-carousel-page-total>3</span>
+                            </div>
+                            <div class="media-text__carousel-nav-buttons">
+                                <button data-navigation-button="prev" class="media-text__carousel-nav-button media-text__carousel-nav-button--prev media-text__carousel-nav-button--inactive">
+                                    <span class="offscreen">Previous</span>
+                                </button>
+                                <button data-navigation-button="next" class="media-text__carousel-nav-button media-text__carousel-nav-button--next">
+                                    <span class="offscreen">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </sly>
+
+                <sly data-sly-test="${!isImageCarousel}">
+                    <div class="media-text__image-container" data-sly-list.imagePathsJson="${imagePaths.items}">
+                        <sly data-sly-call="${html.picture @ src1=imagePathsJson.imagePath, src2='', mediaQuery='max-width: 767px', altText=imagePathsJson.imageAlt, cssClass=cssImageClass}" />
+                    </div>
+                </sly>
+
+                <div data-sly-test="${properties.imageSubTitle}" class="media-text__image-sub-title">${properties.imageSubTitle}</div>
+                <sly data-sly-test="${properties.imageLinkPath}" data-sly-call="${html.a @ href=properties.imageLinkPath, text=properties.imageLinkText, class1='button button_primary', class2='isThumbnail' }" />
+            </sly>
+            <span data-sly-test="${properties.badgeText}" class="media-text__badge-block">${properties.badgeText}</span>
+        </div>
+    </div>
+    <div class="media-text__copy-container ${hasMedia? '' : 'media-text--full-width'}" data-sly-test="${hasCopyContent}">
+        <sly data-sly-test.containHeadFontSize="${properties.headingFontSize}">
+            <h1 data-sly-test="${properties.heading}" data-sly-test="${properties.heading}" class="media-text__title" style="font-size: ${properties.headingFontSize @ context='styleString'}px">${properties.heading}</h1>
+        </sly>
+        <sly data-sly-test="${!containHeadFontSize}">
+            <h1 data-sly-test="${properties.heading}" class="media-text__title">${properties.heading}</h1>
+        </sly>
+
+        <sly data-sly-test.containSubHeadFontSize="${properties.subheadingFontSize}">
+            <p class="media-text__sub-title" data-sly-test="${properties.subHeading}" style="font-size: ${properties.subheadingFontSize @ context='styleString'}px">${properties.subHeading}</p>
+        </sly>
+        <sly data-sly-test="${!containSubHeadFontSize}">
+            <p class="media-text__sub-title" data-sly-test="${properties.subHeading}">${properties.subHeading}</p>
+        </sly>
+
+        <sly data-sly-test.containDescriptionFontSize="${properties.descriptionFontSize}">
+            <div class="rich-text-desc__description-container media-text__description" data-sly-test="${properties.text}" style="font-size: ${properties.descriptionFontSize @ context='styleString'}px">${properties.text @ context='html'}</div>
+        </sly>
+        <sly data-sly-test="${!containDescriptionFontSize}">
+            <div class="rich-text-desc__description-container media-text__description" data-sly-test="${properties.text}">${properties.text @ context='html'}</div>
+        </sly>
+
+        <div class="media-text__search">
+            <div class="media-text__cta-alignment--${properties.ctaAlignment}">
+
+                <sly data-sly-use.link="${ 'com.metacube.cms.core.wcmusepojo.Link' @ path=properties.ctaLinkUrl}"
+                    data-sly-use.strContains="${ '/apps/metacube/components/utils/string/StringContains.js' @ str = link.href, strFragment = '#!MP' }" />
+                <sly data-sly-test.disableLinkCheck="${strContains.match && siteName=='marketing-portal'|| siteName=='enterprise-apps' || siteName=='internal-enterprise-apps'}">
+                        <a data-sly-test="${properties.ctaLinkUrl}" class="${properties.ctaStyle} ${properties.ctaStyle}_primary media-text__cta-button" href="${link.href @context = 'unsafe'}" x-cq-linkchecker="skip"
+                        target="${link.external ? '_blank' : ''}" rel="${link.external ? 'noopener' : ''}">
+                        ${properties.ctaText ? properties.ctaText : "Learn More" @i18n}
+                    </a>
+                </sly>
+                <sly data-sly-test="${!disableLinkCheck}">
+                        <a data-sly-test="${properties.ctaLinkUrl}" class="${properties.ctaStyle} ${properties.ctaStyle}_primary media-text__cta-button" href="${link.href}"
+                        target="${link.external ? '_blank' : ''}" rel="${link.external ? 'noopener' : ''}">
+                        ${properties.ctaText ? properties.ctaText : "Learn More" @i18n}
+                    </a>
+                </sly>
+
+                <sly data-sly-use.link="${ 'com.metacube.cms.core.wcmusepojo.Link' @ path=properties.ctaLinkUrl}"
+                    data-sly-use.strContains="${ '/apps/metacube/components/utils/string/StringContains.js' @ str = link.href, strFragment = '#!MP' }" />
+                <sly data-sly-test.disableLinkCheck="${strContains.match && siteName=='marketing-portal' || siteName=='enterprise-apps' || siteName=='internal-enterprise-apps'}">
+                        <a data-sly-test="${properties.downloadUrl}" class="link link_primary media-text__download-link" href="${properties.downloadUrl @context = 'unsafe'}" x-cq-linkchecker="skip" target="${link.external ? '_blank' : ''}"
+                        rel="${link.external ? 'noopener' : ''}">
+                        <span class="icon-pdf"></span>
+                        <span class="media-text__download-text">${properties.downloadText}</span>
+                    </a>
+                </sly>
+                <sly data-sly-test="${!disableLinkCheck}">
+                        <a data-sly-test="${properties.downloadUrl}" class="link link_primary media-text__download-link" href="${properties.downloadUrl}" target="${link.external ? '_blank' : ''}"
+                        rel="${link.external ? 'noopener' : ''}">
+                        <span class="icon-pdf"></span>
+                        <span class="media-text__download-text">${properties.downloadText}</span>
+                    </a>
+                </sly>
+            </div>
+            <div data-sly-test="${properties.findText && properties.findLinkUrl}" class="media-text__search-container">
+                <sly data-sly-use.link="${ 'com.metacube.cms.core.wcmusepojo.Link' @ path=properties.findLinkUrl}" />
+                <form>
+                    <label class="media-text__form-label">${properties.findText}</label>
+                    <div class="media-text__form-container">
+                        <div class="media-text__form-input__container">
+                            <input type="text" name="" value="" class="media-text__form-input form-input--zip-code" placeholder="Zip Code" />
+                            <p class="error-field--zip-code error-field--hidden"></p>
+                        </div>
+                        <sly data-sly-use.strContains="${ '/apps/metacube/components/utils/string/StringContains.js' @ str = link.href, strFragment = '#!MP' }" />
+
+                        <sly data-sly-test.disableLinkCheck="${strContains.match && siteName=='marketing-portal' || siteName=='enterprise-apps' || siteName=='internal-enterprise-apps'}">
+                            <a href="${link.href @context = 'unsafe'}" x-cq-linkchecker="skip" class="media-text__form-button button button_primary" target="${link.external ? '_blank' : ''}" rel="${link.external ? 'noopener' : ''}">
+                                    Go!
+                            </a>
+                        </sly>
+                        <sly data-sly-test="${!disableLinkCheck}">
+                            <a href="${link.href}" class="media-text__form-button button button_primary" target="${link.external ? '_blank' : ''}" rel="${link.external ? 'noopener' : ''}">
+                                Go!
+                            </a>
+                        </sly>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<sly data-sly-test="${wcmmode.edit && !hasContent}" data-sly-include="placeholder.html" />

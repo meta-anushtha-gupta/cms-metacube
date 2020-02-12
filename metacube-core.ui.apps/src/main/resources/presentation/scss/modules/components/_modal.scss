@@ -1,0 +1,25 @@
+.modal {
+    &__section {
+        font-size: 14px;
+        border: 1px solid $alto;
+        border-radius: 4px;
+    }
+
+    &__title {
+        padding: 3px $space-2;
+        font-size: 24px;
+        border-bottom: 1px solid $alto;
+        font-family: $secondary-font-family;
+    }
+
+    &__button {
+        color: $white;
+        background-color : $astral;
+        border-color: $st-tropaz;
+        padding: $space-2 $space-3;
+        margin: $space-4 $space-3;
+        border-style: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+}

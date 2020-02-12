@@ -1,0 +1,33 @@
+.screen-small-test,
+.screen-large-test,
+.screen-xlarge-test {
+    display: none;
+    @extend .offscreen;
+}
+
+.screen-small-test {
+    @include media($mobile) {
+        display: block;
+    }
+    @include media($tablet) {
+        display: none;
+    }
+    @include media($desktop) {
+        display: none;
+    }
+}
+
+.screen-large-test {
+    @include media($tablet) {
+        display: block;
+    }
+    @include media($desktop) {
+        display: none;
+    }
+}
+
+.screen-xlarge-test {
+    @include media($desktop) {
+        display: block;
+    }
+}

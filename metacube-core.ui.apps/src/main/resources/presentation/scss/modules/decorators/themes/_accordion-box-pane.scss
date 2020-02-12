@@ -1,0 +1,26 @@
+.accordion--box-pane {
+    &:not(.accordion--disabled-small) {
+        &:not(.accordion--disabled-large) {
+            .accordion {
+                &__pane {
+                    padding: $space-4;
+
+                    @include media($large) {
+                        padding: $space-6 $space-9;
+                    }
+                }
+
+                &__item {
+                    &--active {
+                        .accordion {
+                            &__pane {
+                                border: 1px solid $silver;
+                                border-bottom: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

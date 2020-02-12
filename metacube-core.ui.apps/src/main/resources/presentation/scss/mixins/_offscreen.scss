@@ -1,0 +1,17 @@
+// Styling for positioning an element offscreen
+//hides content from visual users, but not screen readers
+//https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
+@mixin offscreen() {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px); /* for Internet Explorer */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+
+    @media only print {
+        display: none;
+    }
+}

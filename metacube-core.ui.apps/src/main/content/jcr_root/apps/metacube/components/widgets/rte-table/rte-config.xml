@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <rtePlugins jcr:primaryType="nt:unstructured">
+        <format
+            jcr:primaryType="nt:unstructured"
+            features="[bold,italic]"/>
+        <subsuperscript
+            jcr:primaryType="nt:unstructured"
+            features="[superscript]"/>
+        <links
+            jcr:primaryType="nt:unstructured"
+            features="[anchor,modifylink,unlink]"/>    
+        <lists
+            jcr:primaryType="nt:unstructured"
+            features="[ordered,unordered]"/>
+        <misctools
+            jcr:primaryType="nt:unstructured"
+            features="[specialchars]">
+        <specialCharsConfig jcr:primaryType="nt:unstructured">
+            <chars jcr:primaryType="nt:unstructured">
+                <copyright jcr:primaryType="nt:unstructured" entity="&amp;copy;" />
+                <trademark jcr:primaryType="nt:unstructured" entity="&amp;trade;" />
+                <registered jcr:primaryType="nt:unstructured" entity="&amp;reg;" />
+                <solid jcr:primaryType="nt:unstructured" entity="&amp;bull;" />
+            </chars>
+        </specialCharsConfig>
+        </misctools>
+        <edit
+            jcr:primaryType="nt:unstructured"
+            features="[cut,copy,paste-plaintext]"/>
+        <findreplace
+            jcr:primaryType="nt:unstructured"
+            features="[find,replace]"/>
+        <spellcheck
+            jcr:primaryType="nt:unstructured"
+            features="[checktext]"/>
+        <undo
+            jcr:primaryType="nt:unstructured"
+            features="[undo,redo]"/>
+        <justify
+            jcr:primaryType="nt:unstructured"
+            features="-"/>
+        <table
+            jcr:primaryType="nt:unstructured"
+            features="*">
+            <tableStyles jcr:primaryType="cq:WidgetCollection">
+                <style
+                    jcr:primaryType="nt:unstructured"
+                    cssName="wrapper"
+                    text="Wrapper"/>
+            </tableStyles>
+            <cellStyles jcr:primaryType="cq:WidgetCollection">
+                <header
+                    jcr:primaryType="nt:unstructured"
+                    cssName="button_secondary_alt"
+                    text="Header"/>
+                <data-row
+                    jcr:primaryType="nt:unstructured"
+                    cssName="button_secondary"
+                    text="data-row"/>
+            </cellStyles>
+        </table>
+    </rtePlugins>
+    <uiSettings jcr:primaryType="nt:unstructured">
+        <cui jcr:primaryType="nt:unstructured">
+            <inline
+                jcr:primaryType="nt:unstructured"
+                toolbar="[format#bold,format#italic,-,subsuperscript#superscript,-,links#anchor,links#modifylink,links#unlink,#lists,-,misctools#specialchars,-,edit#cut,edit#copy,edit#paste-plaintext,-,findreplace#find,findreplace#replace,-,undo#undo,undo#redo,-,spellcheck#checktext,-,fullscreen#start,-,control#close,control#save,-,table#createoredit]">
+                <popovers jcr:primaryType="nt:unstructured">
+                    <lists
+                        jcr:primaryType="nt:unstructured"
+                        items="[lists#unordered,lists#ordered]"
+                        ref="lists"/>
+                </popovers>
+            </inline>
+            <tableEditOptions
+                jcr:primaryType="nt:unstructured"
+                toolbar="[table#insertcolumn-before,table#insertcolumn-after,table#removecolumn,-,table#insertrow-before,table#insertrow-after,table#removerow,-,table#mergecells-right,table#mergecells-down,table#mergecells,table#splitcell-horizontal,table#splitcell-vertical,-,table#selectrow,table#selectcolumn,-,table#ensureparagraph,-,table#modifytableandcell,table#removetable,-,undo#undo,undo#redo,-,table#exitTableEditing,-]"/>
+            <fullscreen
+                jcr:primaryType="nt:unstructured"
+                toolbar="[format#bold,format#italic,-,subsuperscript#superscript,-,links#anchor,links#modifylink,links#unlink,#lists,-,misctools#specialchars,-,edit#cut,edit#copy,edit#paste-plaintext,-,findreplace#find,findreplace#replace,-,undo#undo,undo#redo,-,spellcheck#checktext,-,fullscreen#finish,-,control#close,control#save,-,table#createoredit]">
+                <popovers jcr:primaryType="nt:unstructured">
+                    <lists
+                        jcr:primaryType="nt:unstructured"
+                        items="[lists#unordered,lists#ordered]"
+                        ref="lists"/>
+                </popovers>
+            </fullscreen>
+        </cui>
+    </uiSettings>
+</jcr:root>

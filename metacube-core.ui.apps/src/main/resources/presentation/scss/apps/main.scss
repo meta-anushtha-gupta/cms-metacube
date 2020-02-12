@@ -1,0 +1,29 @@
+// Turn the visual grid on for the main app. All other apps that use neat, do not need to set this.
+// Overrides the bourbon-neat visual grid. Doesn't work if this comes after the library is imported.
+// Mentioned here https://github.com/thoughtbot/neat/issues/89
+// Neat is inserted in /config/_index
+$visual-grid: true;
+@import "../config/index";
+@import "../mixins/index";
+
+// core module content is order specific
+@import "../modules/content/reset";
+@import "../modules/content/typography";
+@import "../modules/content/icons";
+@import "../modules/content/author-validation";
+
+// Core Module components
+@import "../modules/components/grid-debugger";
+@import "../modules/components/screen";
+
+// Note: Decorator modules for decorating specific elements
+// Types: container and decorator elements (e.g. disabled, shadowed, wrapper, etc.)
+@import "../modules/decorators/disabled.scss";
+@import "../modules/decorators/hide.scss";
+@import "../modules/decorators/module-separator.scss";
+@import "../modules/decorators/offscreen.scss";
+@import "../modules/decorators/wrapper.scss";
+
+// Note: Content modules for styling content specific elements
+// Types: headings, paragraphs, lists, links, buttons, etc
+@import "../modules/content/cta";

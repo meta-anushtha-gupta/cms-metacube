@@ -1,0 +1,118 @@
+.heading-blue-background-rich-text-desc {
+    .rich-text-desc {
+        border: 1px solid black;
+
+        &__title {
+            margin-bottom: 0px;
+            padding: $space-2 0px;
+            background-color: $azure-radiance;
+        }
+
+        &__subTitle {
+            background-color: $silver-light;
+        }
+
+        table {
+            border-bottom: none;
+
+            tr {
+                td:first-child {
+                    border-left: none;
+                }
+
+                td:last-child {
+                    border-right: none;
+                }
+
+                &:last-child {
+                    td {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+
+        p {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.bottom-bordered-rich-text-desc {
+    .rich-text-desc {
+        margin-bottom: 0px;
+        padding-bottom: $space-4;
+        border-bottom: 1px solid $alto;
+    }
+}
+
+.complete-bordered-rich-text-desc {
+    .rich-text-desc {
+        border: 1px solid $alto;
+        border-radius: 3px;
+
+        &__title-container {
+            border-bottom: 1px solid $alto;
+            padding: $space-2 $space-4;
+        }
+
+        &__subTitle {
+            margin-left: $space-4;
+        }
+
+        &__title {
+            margin-bottom: 0px;
+        }
+
+        &__description-container {
+            padding: $space-2 $space-4;
+        }
+    }
+}
+
+.content-bordered-rich-text-desc {
+    .rich-text-desc {
+        &__description-container {
+            border: 1px solid $alto;
+            margin-top: $space-4;
+            padding: $space-4 $space-2;
+            border-radius: 3px;
+        }
+
+        &__title-container {
+            border-bottom: 1px solid $alto;
+        }
+    }
+}
+
+
+.table-no-border-rich-text-desc {
+    .rich-text-desc {
+        table {
+            width: 100%;
+
+            td {
+                border: 1px solid $white;
+                border-collapse: collapse;
+                padding: $space;
+            }
+        }
+    }
+}
+
+.table-top-row-blue-rich-text-desc {
+    .rich-text-desc {
+        tr:first-child {
+            background-color: $international-klein-blue;
+            color: $white;
+        }
+    }
+}
+
+.table-top-row-white-rich-text-desc {
+    .rich-text-desc {
+        tr:first-child {
+            background-color: $white;
+        }
+    }
+}

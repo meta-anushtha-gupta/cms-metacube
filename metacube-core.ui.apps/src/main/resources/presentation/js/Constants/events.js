@@ -1,0 +1,20 @@
+export default {
+    CLICK: 'click',
+    KEYDOWN: 'keydown',
+    KEYUP: 'keyup',
+    RESIZE: 'resize',
+    SCROLL: 'scroll',
+    INPUT: 'input',
+    CHANGE: 'change',
+    MOUSEMOVE: 'mousemove',
+    MOUSEOVER: 'mouseover',
+    MOUSEOUT: 'mouseout',
+    TOUCHSTART: 'touchstart',
+    TOUCHMOVE: 'touchmove',
+    TOUCHEND: 'touchend',
+    WHEEL: 'wheel',
+    FOCUS: 'focus',
+    BLUR: 'blur',
+    LOAD: 'load',
+    SUBMIT: 'submit'
+};

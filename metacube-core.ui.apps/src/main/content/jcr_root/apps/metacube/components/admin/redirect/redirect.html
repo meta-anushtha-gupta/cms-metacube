@@ -1,0 +1,24 @@
+<sly data-sly-use.redirect="${ 'com.metacube.cms.core.wcmusepojo.Redirect' 
+        @ path=(properties.redirectTarget ? properties.redirectTarget : currentPage.properties.redirectTarget)}"
+    data-sly-use.html="${ '/apps/metacube/components/utils/templates/html.html' }" />
+
+<div class="module-separator wrapper">
+    <h2 id="redirect-target">Redirect Page</h2>
+    <sly data-sly-test="${currentPage.properties.redirectTarget && properties.redirectTarget}">
+        Redirect set in Page Properties AND Redirect Module. Module Overrides.
+    </sly>
+    <sly data-sly-test="${currentPage.properties.redirectTarget && !properties.redirectTarget}">
+        Redirect set in Page Properties.
+    </sly>
+    <sly data-sly-test="${!currentPage.properties.redirectTarget && properties.redirectTarget}">
+        Redirect set in Redirect Module.
+    </sly>
+
+    In <em>Publish</em> mode, this page will redirect to:
+
+    <sly data-sly-test.hasRedirect="${redirect.href}"
+        data-sly-call="${html.a @ href=redirect.href, text=redirect.href }" />
+    <sly data-sly-text="[NO REDIRECT TARGET SET: Fallback redirect to content root]" data-sly-test="${!hasRedirect}" />
+
+    <p><a href="${currentPage.path}.html?wcmmode=disabled">Test Redirect</a></p>
+</div>

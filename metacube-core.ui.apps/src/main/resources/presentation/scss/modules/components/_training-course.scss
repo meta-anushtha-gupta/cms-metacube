@@ -1,0 +1,49 @@
+.training-course {
+    text-align: left;
+
+    &__table {
+        border: 1px solid $black;
+        border-collapse: collapse;
+        font-size: 14px;
+        width: 100%;
+
+        &-title {
+            @include section-reg;
+            margin-bottom: $space-2;
+        }
+
+        &-row {
+            text-align: left;
+        }
+
+        &-col {
+            border: 1px solid $black;
+            padding: $space-2;
+            vertical-align: middle;
+
+            &:nth-child(1) {
+                width: 25%;
+            }
+
+            &:nth-child(2) {
+                width: 50%;
+            }
+
+            &:nth-child(3) {
+                width: 25%;
+            }
+
+            &-title {
+                font-weight: bold;
+            }
+        }
+
+        &-title {
+            text-align: left;
+        }
+
+        &-content {
+            text-align: left;
+        }
+    }
+}

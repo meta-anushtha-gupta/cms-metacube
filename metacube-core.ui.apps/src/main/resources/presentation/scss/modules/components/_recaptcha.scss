@@ -1,0 +1,10 @@
+.recaptcha {
+    &__error {
+        display: none;
+        color: $guardsman-red;
+
+        .recaptcha.error & {
+            display: block;
+        }
+    }
+}
