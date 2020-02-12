@@ -28,6 +28,7 @@
         @include featured-heading;
         margin-top: $space-3;
         margin-bottom: $space-2;
+        position: relative;
 
         @include media($large) {
             margin-top: 0;
@@ -38,6 +39,7 @@
         @include featured-copy-bold;
         margin-top: $space-3;
         margin-bottom: $space-3;
+        position: relative;
 
         @include media($large) {
             margin-top: 0;

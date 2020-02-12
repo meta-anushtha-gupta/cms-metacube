@@ -1,3 +1,6 @@
 /metacube-core.core/target
 /metacube-core.ui.apps/src/main/resources/presentation/node_modules
 /metacube-core.ui.apps/src/main/resources/presentation/node
+/metacube-core.ui.apps/target
+/metacube-core.ui.apps/src/main/content/jcr_root/etc/designs/metacube/js
+/metacube-core.ui.apps/src/main/content/jcr_root/etc/designs/metacube/css
