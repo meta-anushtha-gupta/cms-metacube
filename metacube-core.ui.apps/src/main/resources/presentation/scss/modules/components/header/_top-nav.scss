@@ -283,6 +283,12 @@ body[data-submenu-state="open"] {
             border-radius: none;
         }
     }
+
+    &__level {
+        display: inline-block;
+        width: 100%;
+        margin: 0 $space-20;
+    }
 }
 
 .sub-nav__level {
