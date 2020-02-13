@@ -21,7 +21,7 @@ body[data-submenu-state="open"] {
                     .top-nav {
                         &__link {
                             border-top: #2F3033 solid thin;
-                            color: $white;
+                            color: $black;
                             font-size: 12px;
                             padding: 3px $space-4;
 
@@ -136,36 +136,34 @@ body[data-submenu-state="open"] {
             }
         }
 
-        &--category {
-            border-top: #2F3033 solid thin;
-        }
-
-        &--menu, &--category {
+        &--menu {
             position: relative;
-            display: block;
+            display: inline-block;
+            vertical-align: bottom;
 
             @include media($tablet) {
                 display: inline-block;
                 border-top: none;
+                margin-bottom: 2px;
             }
 
-            &:before, &:after {
-                background: #444444;
-                content: "";
-                height: 100%;
-                left: 0;
-                position: absolute;
-                top: 0;
-                width: 1px;
+            // &:before, &:after {
+            //     background: #444444;
+            //     content: "";
+            //     height: 100%;
+            //     left: 0;
+            //     position: absolute;
+            //     top: 0;
+            //     width: 1px;
 
-                @include media($mobile-only) {
-                    content: none;
-                }
-            }
+            //     @include media($mobile-only) {
+            //         content: none;
+            //     }
+            // }
 
-            &:after {
-                left: 100%;
-            }
+            // &:after {
+            //     left: 100%;
+            // }
 
             & > .top-nav__link_parent {
                 display: inline-block;
@@ -180,33 +178,8 @@ body[data-submenu-state="open"] {
         .top-nav__link {
             color: $black;
 
-            &_parent {
-                color: $white;
-                position: relative;
-
-                &:after {
-                    @include icon($icon-caret-down);
-                    font-size: 8px;
-                    line-height: 0;
-                    @extend %vertical-align-bottom;
-                    position: absolute;
-                    bottom: $space-4;
-                    right: 15px;
-                    transition: all 0.5s ease 0s;
-
-                    @include media($tablet) {
-                        bottom: $space-5;
-                    }
-                }
-
-                &[data-open="true"]:after {
-                    transform: rotate(180deg);
-                    transform-origin: center center;
-                }
-
-                &[data-open="false"]:after {
-                    transform: rotate(0deg);
-                }
+            &:hover {
+                color: $denim;
             }
         }
 
@@ -344,7 +317,7 @@ body[data-submenu-state="open"] {
 
         .top-nav {
             &__item {
-                color: $white;
+                color: $black;
 
                 @include media($mobile-only) {
                     text-align: center;

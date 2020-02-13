@@ -2,6 +2,8 @@
     data-sly-use.imageSmall="${ '/apps/metacube/components/utils/image.js' @ imagePath='companylogoSmall' }" 
     data-sly-use.html="${ '/apps/metacube/components/utils/templates/html.html' }"
     data-sly-use.helper="/apps/metacube/utility/aem-helper.js"/>
+<sly data-sly-use.menuList="${ '/apps/metacube/components/utils/multifield-json.js' @ mfName='colLinks' }" />
+
 <div class="top-nav__hamburger">
     <span class="top-nav__hamburger-line"></span>
     <span class="top-nav__hamburger-line"></span>
@@ -23,20 +25,13 @@
                     </sly>
                 </div>
         </div>
-            <div data-sly-test ="${properties.menu}"class="top-nav__drop-down top-nav__drop-down--single">
-            <div data-sly-test ="${properties.menu}" class="top-nav__item top-nav__item--menu">
-                <a href="#" class="top-nav__link top-nav__link_parent top-nav__link_menu" data-open="false">
-                    <span class="top-nav__label">${properties.menu}</span>
-                </a>
-                <div class="top-nav__menu-container top-nav__sub-nav top-nav__level" data-analytics-container="{ 'blade': 'menu' }">
-                    <a href="#" class="top-nav__link_back-btn">
-                        ${properties.menu}
+            <sly data-sly-list.menuListJson="${menuList.items}">
+                   <div class="top-nav__item top-nav__item--menu">
+                    <a href="${menuListJson.linkTarget @ extension='html'}" class="top-nav__link">
+                        <span class="top-nav__label">${menuListJson.linkText}</span>
                     </a>
-                    <div data-sly-resource="${ @ path='../menu-subnav', resourceType='/apps/metacube/components/admin/global/nav/menu-subnav', wcmmode='disabled' }"></div>
                 </div>
-            </div>
-        </div>
-
+            </sly>
         </div>
     </div>
 </nav>

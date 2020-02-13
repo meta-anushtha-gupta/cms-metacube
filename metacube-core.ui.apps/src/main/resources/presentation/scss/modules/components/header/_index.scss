@@ -4,7 +4,8 @@
 @import "custom-top-nav";
 
 .header {
-    background: $black;
+    background: $white;
+    border-bottom: 1px solid $black;
 }
 
 #content {
