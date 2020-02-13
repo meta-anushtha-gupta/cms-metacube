@@ -287,11 +287,13 @@ body[data-submenu-state="open"] {
     &__level {
         display: inline-block;
         width: 100%;
-        margin: 0 $space-20;
+        padding: 0 $space-20;
     }
 }
 
 .sub-nav__level {
+    @include omega(2n);
+
     &--left {
         width: 100%;
 
@@ -315,10 +317,12 @@ body[data-submenu-state="open"] {
             text-align: right;
             padding: 0px;
             @include span-columns(5);
+            line-height: 5.2;
         }
 
         @include media($desktop) {
             @include span-columns(7);
+            line-height: 5.2;
         }
 
         .top-nav {
