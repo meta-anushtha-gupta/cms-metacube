@@ -17,7 +17,7 @@
                 <sly data-sly-test.hasYoutube="${!hasHtml5Video && properties.youtube}">
                     <div class="video_preview-container">
                         <picture>
-                            <img src="/etc/designs/metacube/images/placeholder_938x531.png" alt="" class="video__img">
+                            <img src="/bin/metacube/image-placeholder?size=938x531&inverse=true" alt="" class="video__img">
                         </picture>
                     </div>
                     <iframe class="media-text__video-iframe" height="360" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media" title="YouTube video player" src="https://www.youtube.com/embed/${properties.youtube}?rel=0&amp;wmode=transparent&amp;modestbranding=1&amp;showinfo=0">
@@ -27,7 +27,7 @@
                 <sly data-sly-test.hasVimeo="${!hasHtml5Video && !hasYoutube && properties.vimeo}">
                     <div class="video_preview-container">
                         <picture>
-                            <img src="/etc/designs/metacube/images/placeholder_938x531.png" alt="" class="video__img">
+                            <img src="/bin/metacube/image-placeholder?size=938x531&inverse=true" alt="" class="video__img">
                         </picture>
                     </div>
                     <iframe class="media-text__video-iframe" height="360" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media" title="Vimeo video player" src="https://player.vimeo.com/video/${properties.vimeo}">
