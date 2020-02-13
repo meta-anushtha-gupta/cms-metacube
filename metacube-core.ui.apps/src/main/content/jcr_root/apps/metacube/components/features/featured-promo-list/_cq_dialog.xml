@@ -54,14 +54,14 @@
                                                     fieldLabel="Image: Large Screen"
                                                     name="./imgLarge"
                                                     required="true"
-                                                    rootPath="/content/dam/microsites"/>
+                                                    rootPath="/content/dam/metacube"/>
                                                 <imgSmall
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                                     fieldDescription="Image dimensions: 420 x 251"
                                                     fieldLabel="Image: Small Screen"
                                                     name="./imgSmall"
-                                                    rootPath="/content/dam/microsites"/>
+                                                    rootPath="/content/dam/metacube"/>
                                                 <imgAltText
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -76,14 +76,14 @@
                                                     fieldLabel="Hover Image: Large Screen"
                                                     name="./imgHoverLarge"
                                                     required="false"
-                                                    rootPath="/content/dam/microsites"/>
+                                                    rootPath="/content/dam/metacube"/>
                                                 <imgHoverSmall
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                                     fieldDescription="Hover Image dimensions: 420 x 251"
                                                     fieldLabel="Hover Image: Small Screen"
                                                     name="./imgHoverSmall"
-                                                    rootPath="/content/dam/microsites"/>
+                                                    rootPath="/content/dam/metacube"/>
                                                 <imgHoverAltText
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -129,7 +129,7 @@
                                                 <style
 							                        jcr:primaryType="nt:unstructured"
 							                        sling:resourceType="granite/ui/components/foundation/include"
-							                        path="/apps/microsites/components/widgets/ctaLinkStyle/ctaStyle"/>
+							                        path="/apps/metacube/components/widgets/ctaLinkStyle/ctaStyle"/>
                                             </items>
                                         </column>
                                     </items>

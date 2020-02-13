@@ -1,7 +1,7 @@
 package com.metacube.cms.core.aem;
 
 /**
- * Microsites Constants
+ * metacube Constants
  *
  * @author Urmila
  *
