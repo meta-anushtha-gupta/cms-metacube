@@ -5,7 +5,7 @@
 <sly data-sly-test.hasCopyContent="${properties.heading || properties.subHeading || properties.text}" />
 <sly data-sly-test.hasMedia="${properties.html5video|| properties.youtube || properties.vimeo || imagePaths.items}" />
 <div class="${properties.imageCarousel ? 'media-text--has-carousel' : 'media-text--no-carousel'}">
-    <section data-sly-test.hasContent="${hasCopyContent || hasMedia}" 
+    <section data-sly-test.hasContent="${hasCopyContent || hasMedia}"
         class="media-text wrapper ${properties.separator}  media-text--${properties.textBlock} media-text__${properties.contentAlignment} media-text__vertical--${properties.mediaTextVerticalAlignment} ">
     <div class="media-text__media-container ${hasCopyContent? '' : 'media-text--full-width'}" data-sly-test="${hasMedia}">
         <sly data-sly-test.isImageCarousel="${properties.imageCarousel ? 'MediaText' : ''}" />
@@ -131,30 +131,6 @@
                         <span class="media-text__download-text">${properties.downloadText}</span>
                     </a>
                 </sly>
-            </div>
-            <div data-sly-test="${properties.findText && properties.findLinkUrl}" class="media-text__search-container">
-                <sly data-sly-use.link="${ 'com.metacube.cms.core.wcmusepojo.Link' @ path=properties.findLinkUrl}" />
-                <form>
-                    <label class="media-text__form-label">${properties.findText}</label>
-                    <div class="media-text__form-container">
-                        <div class="media-text__form-input__container">
-                            <input type="text" name="" value="" class="media-text__form-input form-input--zip-code" placeholder="Zip Code" />
-                            <p class="error-field--zip-code error-field--hidden"></p>
-                        </div>
-                        <sly data-sly-use.strContains="${ '/apps/metacube/components/utils/string/StringContains.js' @ str = link.href, strFragment = '#!MP' }" />
-
-                        <sly data-sly-test.disableLinkCheck="${strContains.match && siteName=='marketing-portal' || siteName=='enterprise-apps' || siteName=='internal-enterprise-apps'}">
-                            <a href="${link.href @context = 'unsafe'}" x-cq-linkchecker="skip" class="media-text__form-button button button_primary" target="${link.external ? '_blank' : ''}" rel="${link.external ? 'noopener' : ''}">
-                                    Go!
-                            </a>
-                        </sly>
-                        <sly data-sly-test="${!disableLinkCheck}">
-                            <a href="${link.href}" class="media-text__form-button button button_primary" target="${link.external ? '_blank' : ''}" rel="${link.external ? 'noopener' : ''}">
-                                Go!
-                            </a>
-                        </sly>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
