@@ -1,9 +1,8 @@
 <sly data-sly-use.helper="/apps/metacube/utility/aem-helper.js"/>
-<footer class="footer"  data-load-module="Metacube">
+<footer class="footer">
     <section class="footer__container wrapper">
 
 <sly data-sly-test.componentPath="${'/content/{0}/admin/header-footer/jcr:content/footer-container' @ format=[helper.siteName]}"/>
     <sly class="footer__text" data-sly-resource="${ @ path=componentPath, resourceType='/apps/metacube/components/admin/global/footer', wcmmode='disabled'}" />
      </section>
 </footer>
-

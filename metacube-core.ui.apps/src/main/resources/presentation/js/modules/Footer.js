@@ -3,8 +3,6 @@
  * Has methods related to composition of the footer module
  */
 import Validation from 'modules/Validation';
-// import { accordionParser } from 'partials/accordion';
-// import { Disclaimer } from 'partials/disclaimer';
 import { EVENTS } from 'Constants';
 
 const CLASSES = {
